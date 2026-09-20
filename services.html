@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Martial arts disciplines, training programs, and online registration for trial classes at Salahuddin Academy.">
+    <meta name="author" content="Nurseyit Kalybai">
+    <title>Salahuddin Martial Arts Academy — Services</title>
+</head>
+<body>
+    <!-- Author of the page: Nurseyit Kalybai -->
+    <!-- This page displays discipline details and contains an interactive enrollment form -->
+
+    <header>
+        <p>Athletic Combat Club in Astana</p>
+        <h1>Training Programs and Trial Class Registration</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="coaches.html">Coaches</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section>
+            <h2>Our Core Training Disciplines</h2>
+            <p>
+                Salahuddin Academy offers structured training across three major combat styles: 
+                <strong>Kyokushin Karate</strong>, <strong>Olympic Taekwondo (WT)</strong>, and <strong>Classic Boxing</strong>. 
+                Each discipline emphasizes distinct physical and mental attributes: karate builds endurance and bodily conditioning, 
+                taekwondo maximizes kicking speed and rotational agility, and boxing hones defensive head movement and punching precision.
+            </p>
+
+            <figure>
+                <img src="images/karate-sparring.jpg" alt="Two karate practitioners practicing partner drills in white dogi">
+                <figcaption>Partner defense training in our junior karate group</figcaption>
+            </figure>
+
+            <figure>
+                <img src="images/boxing-training.jpg" alt="Boxer striking heavy leather punching bags in the workout area">
+                <figcaption>Heavy bag striking drills in the boxing corner</figcaption>
+            </figure>
+        </section>
+
+        <section>
+            <h2>Program Comparison</h2>
+            <table border="1">
+                <caption>Overview of Combat Disciplines at Salahuddin Academy</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Discipline</th>
+                        <th scope="col">Primary Focus</th>
+                        <th scope="col">Minimum Age</th>
+                        <th scope="col">Required Attire</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Kyokushin Karate</th>
+                        <td>Full-contact strikes, close-range punches and kicks, body conditioning</td>
+                        <td>Age 6+</td>
+                        <td>Dogi (white cotton uniform) and belt</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Taekwondo WT</th>
+                        <td>High spinning kicks, Olympic sparring rules, agile footwork</td>
+                        <td>Age 7+</td>
+                        <td>Dobok uniform, chest protector (hogu)</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Classic Boxing</th>
+                        <td>Punches, slips, rolls, weaving, and continuous footwork</td>
+                        <td>Age 10+</td>
+                        <td>Boxing shorts, t-shirt, hand wraps, gloves</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>
+                Special status: 
+                <!-- span is used here strictly to highlight discount text without introducing block restructuring -->
+                <span>the first trial session is completely free</span> for all newcomers upon presentation of a basic medical clearance.
+            </p>
+        </section>
+
+        <section id="enrollment-section">
+            <h2>Online Enrollment for a Trial Class</h2>
+            <!-- This form is designed for Assignment 1 demonstration and does not submit data to a live backend yet -->
+            <form action="services.html" method="post">
+                <fieldset>
+                    <legend>Applicant Personal Information</legend>
+
+                    <p>
+                        <label for="applicant-name">Full Legal Name:</label>
+                        <input type="text" id="applicant-name" name="applicant_name" placeholder="Kairat Nurlanov" required>
+                    </p>
+
+                    <p>
+                        <label for="applicant-email">Email Address:</label>
+                        <input type="email" id="applicant-email" name="applicant_email" placeholder="kairat@astanait.edu.kz" required>
+                    </p>
+
+                    <p>
+                        <label for="applicant-phone">Mobile Phone Number:</label>
+                        <input type="tel" id="applicant-phone" name="applicant_phone" placeholder="+7 701 000 00 00" required>
+                    </p>
+
+                    <p>
+                        <label for="applicant-age">Athlete Age (Full Years):</label>
+                        <input type="number" id="applicant-age" name="applicant_age" min="6" max="75" placeholder="19" required>
+                    </p>
+
+                    <p>
+                        <label for="preferred-date">Preferred First Visit Date:</label>
+                        <input type="date" id="preferred-date" name="preferred_date" required>
+                    </p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Discipline and Experience Details</legend>
+
+                    <p>Select Martial Art:</p>
+                    <p>
+                        <input type="radio" id="dir-karate" name="sport_direction" value="karate" checked>
+                        <label for="dir-karate">Kyokushin Karate</label>
+                    </p>
+                    <p>
+                        <input type="radio" id="dir-taekwondo" name="sport_direction" value="taekwondo">
+                        <label for="dir-taekwondo">Taekwondo WT</label>
+                    </p>
+                    <p>
+                        <input type="radio" id="dir-boxing" name="sport_direction" value="boxing">
+                        <label for="dir-boxing">Classic Boxing</label>
+                    </p>
+
+                    <p>
+                        <label for="experience-level">Current Athletic Level:</label>
+                        <select id="experience-level" name="experience_level" required>
+                            <option value="">-- Select Level --</option>
+                            <option value="beginner">Beginner (No prior martial arts experience)</option>
+                            <option value="intermediate">Intermediate (1+ years experience)</option>
+                            <option value="advanced">Advanced / Ranked Competitive Athlete</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="health-notes">Medical Conditions or Physical Limitations:</label><br>
+                        <textarea id="health-notes" name="health_notes" rows="4" cols="45" placeholder="Specify past injuries, chronic conditions, or physical precautions..."></textarea>
+                    </p>
+
+                    <p>
+                        <input type="checkbox" id="safety-rules" name="safety_rules" required>
+                        <label for="safety-rules">I confirm that I have reviewed the dojo safety policies and agree to uphold them</label>
+                    </p>
+                </fieldset>
+
+                <p>
+                    <button type="submit">Submit Enrollment</button>
+                    <button type="reset">Reset Fields</button>
+                </p>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>Location: 55 Uly Dala Avenue (Basement floor), Astana, Kazakhstan.</p>
+        <p>Phone: <a href="tel:+77780480000">+7 (778) 048-00-00</a></p>
+        <p>Email: <a href="mailto:salahuddin.academy@mail.ru">salahuddin.academy@mail.ru</a></p>
+        <p>2GIS Map: <a href="https://2gis.kz/astana/firm/70000001078856416" target="_blank" rel="noopener noreferrer">View Salahuddin on 2GIS</a></p>
+        <p>&copy; 2026 Salahuddin Martial Arts Academy. All rights reserved.</p>
+    </footer>
+</body>
+</html>

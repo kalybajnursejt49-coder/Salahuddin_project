@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Membership pricing, monthly packages, and membership pre-booking at Salahuddin Martial Arts Academy.">
+    <meta name="author" content="Daniyar Aliyev">
+    <title>Salahuddin Martial Arts Academy — Pricing</title>
+</head>
+<body>
+    <!-- Author of the page: Daniyar Aliyev -->
+    <!-- Outlines membership fees, pricing tiers, and an online membership pass order form -->
+
+    <header>
+        <p>Athletic Combat Club in Astana</p>
+        <h1>Membership Packages and Club Passes</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="coaches.html">Coaches</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section>
+            <h2>Official Rates and Pass Tiers</h2>
+            <p>
+                We maintain clear and fixed pricing with zero registration surcharges. Every pass grants full access 
+                to locker rooms, individual lockers, hot showers, filtered water stations, and intro safety briefings. 
+                Pass holders can request a temporary freeze in case of illness, travel, or university examination periods.
+            </p>
+
+            <table border="1">
+                <caption>Standard Membership Rates for 2026</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Membership Tier</th>
+                        <th scope="col">Class Allowance</th>
+                        <th scope="col">Pass Validity</th>
+                        <th scope="col">Price (KZT)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Youth Foundation (Karate / Taekwondo)</th>
+                        <td>12 group sessions</td>
+                        <td>30 calendar days</td>
+                        <td>25,000</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Adult Standard (Boxing / Karate)</th>
+                        <td>12 group sessions</td>
+                        <td>30 calendar days</td>
+                        <td>30,000</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">University Student (AITU / Higher Ed)</th>
+                        <td>12 group sessions</td>
+                        <td>30 calendar days</td>
+                        <td>22,000</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">All-Access Unlimited Pass</th>
+                        <td>Unlimited group classes</td>
+                        <td>30 calendar days</td>
+                        <td>45,000</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Personal Training Block</th>
+                        <td>10 one-on-one sessions</td>
+                        <td>45 calendar days</td>
+                        <td>60,000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>Gear and Equipment Guidelines</h2>
+            <figure>
+                <img src="images/uniform-display.jpg" alt="Certified sparring gear including headguard, gloves, and shin guards">
+                <figcaption>Certified protective equipment used for sparring practice</figcaption>
+            </figure>
+
+            <h3>Mandatory Safety Equipment</h3>
+            <ol type="1" start="1">
+                <li>Form-fitted dental mouthguard.</li>
+                <li>Cotton boxing hand wraps (minimum 3.5 meters length).</li>
+                <li>Groin protection guard for sparring participants.</li>
+                <li>Padded shin and instep guards.</li>
+            </ol>
+        </section>
+
+        <section id="order-card-section">
+            <h2>Pre-Order a Club Membership Pass</h2>
+            <!-- This form illustrates Assignment 1 inputs and operates without server processing at this stage -->
+            <form action="pricing.html" method="post">
+                <fieldset>
+                    <legend>Member Identification</legend>
+
+                    <p>
+                        <label for="buyer-name">Full Name of Member:</label>
+                        <input type="text" id="buyer-name" name="buyer_name" placeholder="Arman Serikov" required>
+                    </p>
+
+                    <p>
+                        <label for="buyer-email">Receipt Delivery Email:</label>
+                        <input type="email" id="buyer-email" name="buyer_email" placeholder="arman@mail.kz" required>
+                    </p>
+
+                    <p>
+                        <label for="buyer-phone">Mobile / WhatsApp Number:</label>
+                        <input type="tel" id="buyer-phone" name="buyer_phone" placeholder="+7 705 111 22 33" required>
+                    </p>
+
+                    <p>
+                        <label for="order-quantity">Number of Passes:</label>
+                        <input type="number" id="order-quantity" name="order_quantity" min="1" max="5" value="1" required>
+                    </p>
+
+                    <p>
+                        <label for="start-pass-date">Membership Start Date:</label>
+                        <input type="date" id="start-pass-date" name="start_pass_date" required>
+                    </p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Pass Configuration and Payment</legend>
+
+                    <p>Select Membership Plan:</p>
+                    <p>
+                        <input type="radio" id="plan-child" name="pricing_plan" value="child">
+                        <label for="plan-child">Youth Foundation (25,000 KZT)</label>
+                    </p>
+                    <p>
+                        <input type="radio" id="plan-adult" name="pricing_plan" value="adult" checked>
+                        <label for="plan-adult">Adult Standard (30,000 KZT)</label>
+                    </p>
+                    <p>
+                        <input type="radio" id="plan-student" name="pricing_plan" value="student">
+                        <label for="plan-student">University Student (22,000 KZT)</label>
+                    </p>
+                    <p>
+                        <input type="radio" id="plan-unlimited" name="pricing_plan" value="unlimited">
+                        <label for="plan-unlimited">Unlimited Combat Pass (45,000 KZT)</label>
+                    </p>
+
+                    <p>
+                        <label for="payment-method">Payment Preference on Arrival:</label>
+                        <select id="payment-method" name="payment_method" required>
+                            <option value="">-- Choose Payment Option --</option>
+                            <option value="kaspi-qr">Kaspi QR / Kaspi Pay</option>
+                            <option value="bank-card">Debit or Credit Card Terminal</option>
+                            <option value="cash">Cash at Front Desk</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="buyer-comment">Student ID Verification or Special Requests:</label><br>
+                        <textarea id="buyer-comment" name="buyer_comment" rows="4" cols="45" placeholder="Include student ID number for university discount..."></textarea>
+                    </p>
+
+                    <p>
+                        <input type="checkbox" id="public-offer" name="public_offer" required>
+                        <label for="public-offer">I agree to the membership contract conditions and pass freezing guidelines</label>
+                    </p>
+                </fieldset>
+
+                <p>
+                    <button type="submit">Reserve Membership Pass</button>
+                    <button type="reset">Clear Selection</button>
+                </p>
+            </form>
+            <hr>
+            <!-- div is utilized strictly as an isolated block for refund terms -->
+            <div>
+                <p>
+                    Cancellation Policy: 
+                    <!-- span is used to emphasize key terms without disrupting text layout -->
+                    <span>full refunds are issued within the first 14 days</span> minus completed sessions.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Location: 55 Uly Dala Avenue (Basement floor), Astana, Kazakhstan.</p>
+        <p>Phone: <a href="tel:+77780480000">+7 (778) 048-00-00</a></p>
+        <p>Email: <a href="mailto:salahuddin.academy@mail.ru">salahuddin.academy@mail.ru</a></p>
+        <p>2GIS Map: <a href="https://2gis.kz/astana/firm/70000001078856416" target="_blank" rel="noopener noreferrer">View Salahuddin on 2GIS</a></p>
+        <p>&copy; 2026 Salahuddin Martial Arts Academy. All rights reserved.</p>
+    </footer>
+</body>
+</html>
