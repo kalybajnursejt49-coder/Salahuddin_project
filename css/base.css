@@ -1,0 +1,216 @@
+/* Shared styles: Nurseyit Kalybai and Tuleubayev Damir.
+   Palette (five colours):
+   #f5f4f0 - a quiet page background.
+   white - clear surfaces for content and forms.
+   #242824 - dark text with good contrast.
+   #80651f - a muted gold accent for the academy.
+   rgb(216, 219, 211) - soft borders between content blocks.
+*/
+
+/* Universal selector: padding and borders stay inside the declared width. */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding-bottom: 40px;
+    background: #f5f4f0;
+    color: #242824;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.65;
+    letter-spacing: 0.01em;
+}
+
+/* Centering 1: margin auto keeps the desktop content column in the middle. */
+.site-header, .site-nav, main, .site-footer {
+    width: 1080px;
+    margin: 0 auto;
+}
+
+.site-header {
+    padding: 48px 0 26px;
+}
+
+/* Child selector: only the small academy name directly inside the header. */
+.site-header > p {
+    margin: 0 0 12px;
+    color: #80651f;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+h1, h2, h3 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+h1 { margin: 0; font-size: 46px; }
+h2 { margin: 0 0 20px; font-size: 28px; }
+h3 { margin: 0 0 16px; font-size: 22px; }
+p { margin: 0 0 16px; }
+
+.site-nav {
+    border-top: 1px solid rgb(216, 219, 211);
+    border-bottom: 1px solid rgb(216, 219, 211);
+}
+
+.site-nav ul {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    padding: 10px 0;
+    list-style: none;
+}
+
+/* Descendant selector: every link inside the main navigation. */
+.site-nav a {
+    display: block;
+    padding: 8px 16px;
+    border-radius: 4px;
+    color: #242824;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+/* Attribute selector marks the page the visitor is currently reading. */
+.site-nav a[aria-current="page"] {
+    background: #242824;
+    color: white;
+}
+
+a { color: #80651f; text-underline-offset: 4px; }
+a:hover { text-decoration: none; }
+.site-nav a:hover { background: #80651f; color: white; }
+
+/* Keyboard focus remains visible on links and form controls. */
+a:focus, button:focus, input:focus, select:focus, textarea:focus {
+    outline: 2px solid #80651f;
+    outline-offset: 3px;
+}
+
+main { padding: 32px 0; }
+
+/* Static keeps ordinary content in document flow; these panels need no offsets. */
+.content-panel {
+    position: static;
+    min-width: 0;
+    padding: 28px;
+    background: white;
+    border: 1px solid rgb(216, 219, 211);
+    border-radius: 6px;
+}
+
+/* The first heading's margin could collapse through a plain parent.
+   Zero top margins plus panel padding keep the spacing inside the panel. */
+.content-panel > :first-child { margin-top: 0; }
+.content-panel > :last-child { margin-bottom: 0; }
+
+/* Adjacent sibling: reduce the gap when a paragraph follows a heading. */
+h2 + p { margin-top: 0; }
+
+ul, ol { padding-left: 22px; }
+li { margin-bottom: 6px; }
+.site-nav li { margin: 0; }
+
+figure { margin: 0; }
+img { max-width: 100%; height: auto; }
+figcaption { font-size: 13px; line-height: 1.5; }
+
+/* Relative makes the existing figure the containing block for its caption. */
+.poster { position: relative; }
+.poster img { display: block; width: 100%; }
+.poster figcaption {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 12px;
+    color: white;
+    background: #242824;
+}
+
+.site-footer {
+    padding: 24px 0 36px;
+    border-top: 1px solid rgb(216, 219, 211);
+    font-size: 13px;
+}
+
+.site-footer p { margin: 0; }
+
+/* Fixed keeps a useful way back to the menu on long tables and forms. */
+.back-to-top {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 1;
+    padding: 10px 16px;
+    border: 1px solid #242824;
+    border-radius: 4px;
+    background: white;
+    color: #242824;
+    text-decoration: none;
+}
+
+/* Pseudo-element adds a decorative arrow; the link already has a text label. */
+.back-to-top::before { content: "↑ "; }
+
+/* Centering 2: flex centers the two buttons inside their existing paragraph. */
+.form-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin: 24px 0 0;
+}
+
+form { margin-top: 24px; }
+fieldset {
+    min-width: 0;
+    margin: 0 0 24px;
+    padding: 20px;
+    border: 1px solid rgb(216, 219, 211);
+}
+legend { padding: 0 8px; font-weight: 700; }
+label { display: block; margin-bottom: 6px; font-weight: 700; }
+input, select, textarea, button { font: inherit; }
+input, select, textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid rgb(216, 219, 211);
+    border-radius: 4px;
+    background: white;
+    color: #242824;
+}
+textarea { resize: vertical; }
+input[type="radio"], input[type="checkbox"] { width: auto; margin-right: 8px; }
+/* Only labels immediately following a choice input stay on the same line. */
+input[type="radio"] + label, input[type="checkbox"] + label {
+    display: inline;
+    font-weight: 400;
+}
+button {
+    padding: 10px 24px;
+    border: 1px solid #242824;
+    border-radius: 4px;
+    background: #242824;
+    color: white;
+    cursor: pointer;
+}
+button[type="reset"] { background: white; color: #242824; }
+button:hover { background: #80651f; color: white; }
+
+.practice-note {
+    padding: 12px 16px;
+    background: #f5f4f0;
+    border-left: 3px solid #80651f;
+    font-size: 14px;
+}

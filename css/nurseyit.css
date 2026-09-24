@@ -1,0 +1,72 @@
+/* Nurseyit Kalybai: Home, Services and Contact. */
+
+/* Grid suits the page because the introduction spans two aligned columns. */
+.nurseyit-page .page-layout {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    align-items: start;
+}
+
+.nurseyit-page .page-intro { grid-column: 1 / -1; }
+.nurseyit-page .form-panel { grid-column: 1 / -1; }
+
+/* An existing list becomes a wrapping row of links without another wrapper. */
+.class-links {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin: 0 0 24px;
+    padding: 0;
+    list-style: none;
+}
+.class-links > li { flex: 1 1 auto; margin: 0; }
+.class-links ul { margin-top: 8px; }
+
+/* A second flex block on all three pages: contact details can wrap naturally. */
+.nurseyit-page .site-footer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px 28px;
+}
+.nurseyit-page .site-footer > p { flex: 1 1 300px; }
+
+.home-poster { width: 250px; margin: 0 auto; }
+
+/* ID: one introduction and one same-page destination, rather than a reusable card. */
+#about-club { border-top: 3px solid #80651f; }
+
+/* ID: this is the unique form destination linked from the contact page. */
+#enrollment-section { border-top: 3px solid #80651f; }
+
+/* Specificity experiment 1: (0,1,0). This loses to #about-club below. */
+.page-intro { padding: 20px; }
+/* Specificity experiment 2: (1,0,0). The ID wins and resolves padding to 32px.
+   The other pages keep the reusable 20px rule; no priority override is needed. */
+#about-club { padding: 32px; }
+
+.nurseyit-page fieldset {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 24px;
+}
+.nurseyit-page fieldset > p { flex: 1 1 280px; margin: 0; }
+.nurseyit-page .choice-field { flex-basis: 100%; }
+
+.sports-list { margin: 24px 0; }
+.sports-list dt { margin-top: 16px; font-weight: 700; color: #80651f; }
+.sports-list dd { margin: 4px 0 0; }
+
+.contact-links { padding: 0; list-style: none; }
+.contact-links li { margin-bottom: 14px; }
+
+/* Float example: the photo sits inside the introduction paragraph. */
+.intro-photo {
+    float: left;
+    width: 110px;
+    margin: 0 20px 12px 0;
+}
+/* Without clear, the next paragraph could remain beside the floated image. */
+.after-photo { clear: both; }

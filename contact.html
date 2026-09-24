@@ -3,172 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contact channels, physical location, and direct messaging form for Salahuddin Martial Arts Academy in Astana.">
-    <meta name="author" content="Daniyar Aliyev">
-    <title>Salahuddin Martial Arts Academy — Contact</title>
+    <meta name="description" content="Contact the academy for Salahuddin Academy in Astana.">
+    <meta name="author" content="Nurseyit Kalybai">
+    <title>Salahuddin Academy — Contact the academy</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/nurseyit.css">
 </head>
-<body>
-    <!-- Author of the page: Daniyar Aliyev -->
-    <!-- Contains location information, contact communication table, and feedback inquiry form -->
+<body class="nurseyit-page">
+    <!-- Author of the page: Nurseyit Kalybai -->
 
-    <header>
-        <p>Athletic Combat Club in Astana</p>
-        <h1>Contact Channels and Location Details</h1>
+    <!-- One top ID is the destination for the fixed return link. -->
+    <header class="site-header" id="top">
+        <p>Salahuddin Martial Arts Academy</p>
+        <h1>Contact the academy</h1>
     </header>
 
-    <nav>
+    <nav class="site-nav" aria-label="Main navigation">
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="services.html">Services</a></li>
             <li><a href="coaches.html">Coaches</a></li>
             <li><a href="schedule.html">Schedule</a></li>
             <li><a href="pricing.html">Pricing</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.html" aria-current="page">Contact</a></li>
         </ul>
     </nav>
 
-    <main>
-        <article>
-            <header>
-                <h2>Finding Our Academy in Astana</h2>
-            </header>
-            <p>
-                Our club is situated on the Left Bank of Astana at <strong>55 Uly Dala Avenue</strong>. 
-                The dojo entrance is situated on the end side of the residential complex leading directly down to 
-                the basement level. Ample open customer parking is available right in front of the main avenue access road.
-            </p>
-
-            <figure>
-                <img src="images/entrance-sign.jpg" alt="Building entrance sign indicating Salahuddin Academy doorway">
-                <figcaption>Exterior entrance doorway along Uly Dala Avenue</figcaption>
-            </figure>
-        </article>
-
-        <section>
-            <h2>Direct Communications Directory</h2>
-            <table border="1">
-                <caption>Administrative Contact Methods</caption>
-                <thead>
-                    <tr>
-                        <th scope="col">Channel</th>
-                        <th scope="col">Contact Coordinates</th>
-                        <th scope="col">Service Hours</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">Front Desk Phone</th>
-                        <td><a href="tel:+77780480000">+7 (778) 048-00-00</a></td>
-                        <td>Daily 08:30 – 22:00</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Direct Email</th>
-                        <td><a href="mailto:salahuddin.academy@mail.ru">salahuddin.academy@mail.ru</a></td>
-                        <td>24/7 inbox receiving</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2GIS Listing</th>
-                        <td><a href="https://2gis.kz/astana/firm/70000001078856416" target="_blank" rel="noopener noreferrer">Salahuddin 2GIS Profile</a></td>
-                        <td>Route maps and verified reviews</td>
-                    </tr>
-                </tbody>
-            </table>
+    <main class="page-layout">
+        <!-- Contact details come first so visitors can quickly find the academy. -->
+        <section class="content-panel page-intro" id="contacts">
+            <h2>Uly Dala branch</h2>
+            <p>The academy's 2GIS listing gives the address as 55 Uly Dala Avenue, Astana,
+                on the basement floor. Check the entrance on the map before your first visit.</p>
+            <p>The listing shows opening hours of 09:00 to 22:30 every day.
+                Opening hours are not the same as class times: each sport has its own timetable.</p>
+            <ul class="contact-links">
+                <li>Contact number from the listing's WhatsApp link:
+                    <a href="tel:+77780486000">+7 (778) 048-60-00</a></li>
+                <li><a href="https://instagram.com/salahuddin.academy" target="_blank" rel="noopener noreferrer">Academy Instagram</a></li>
+                <li><a href="https://2gis.kz/astana/firm/70000001078856416" target="_blank" rel="noopener noreferrer">Address and entrance on 2GIS</a></li>
+            </ul>
+        </section>
+        <section class="content-panel">
+            <h2>Plan your visit</h2>
+            <p>The academy's 2025 posts also show groups at Turan 19.
+                Ask which branch your chosen group uses today. Confirm the time, available places,
+                trial price and clothes or equipment needed before travelling.</p>
+            <!-- The timetable stays on its own page so it only needs to be updated once. -->
+            <p>You can compare the published groups on the <a href="schedule.html">schedule page</a>.
+                For an actual enquiry, use the contact details above. The <a href="services.html#enrollment-section">trial class form</a> is on the sports page.</p>
         </section>
 
-        <section id="feedback-section">
-            <h2>Send Us an Inquiry</h2>
-            <!-- This form simulates an inquiry request for Assignment 1 without server-side processing -->
-            <form action="contact.html" method="post">
-                <fieldset>
-                    <legend>Contact Information</legend>
-
-                    <p>
-                        <label for="contact-name">Your Full Name:</label>
-                        <input type="text" id="contact-name" name="contact_name" placeholder="Alikhan" required>
-                    </p>
-
-                    <p>
-                        <label for="contact-email">Email Address:</label>
-                        <input type="email" id="contact-email" name="contact_email" placeholder="alikhan@mail.kz" required>
-                    </p>
-
-                    <p>
-                        <label for="contact-phone">Phone Number:</label>
-                        <input type="tel" id="contact-phone" name="contact_phone" placeholder="+7 702 333 44 55" required>
-                    </p>
-
-                    <p>
-                        <label for="contact-attendees">Number of Prospective Athletes:</label>
-                        <input type="number" id="contact-attendees" name="contact_attendees" min="1" max="10" value="1" required>
-                    </p>
-
-                    <p>
-                        <label for="contact-callback-date">Preferred Callback Date:</label>
-                        <input type="date" id="contact-callback-date" name="contact_callback_date" required>
-                    </p>
-                </fieldset>
-
-                <fieldset>
-                    <legend>Inquiry Topic and Details</legend>
-
-                    <p>Subject of Interest:</p>
-                    <p>
-                        <input type="radio" id="topic-training" name="inquiry_topic" value="training" checked>
-                        <label for="topic-training">General Training and Groups</label>
-                    </p>
-                    <p>
-                        <input type="radio" id="topic-rent" name="inquiry_topic" value="rent">
-                        <label for="topic-rent">Dojo Rental for Events</label>
-                    </p>
-                    <p>
-                        <input type="radio" id="topic-partnership" name="inquiry_topic" value="partnership">
-                        <label for="topic-partnership">School / University Partnership</label>
-                    </p>
-
-                    <p>
-                        <label for="contact-time-preference">Best Call Time Window:</label>
-                        <select id="contact-time-preference" name="contact_time_preference" required>
-                            <option value="">-- Choose Window --</option>
-                            <option value="morning">Morning (09:00 – 12:00)</option>
-                            <option value="afternoon">Afternoon (12:00 – 17:00)</option>
-                            <option value="evening">Evening (17:00 – 21:00)</option>
-                        </select>
-                    </p>
-
-                    <p>
-                        <label for="contact-message">Message Content:</label><br>
-                        <textarea id="contact-message" name="contact_message" rows="5" cols="45" placeholder="Write your question or request here..." required></textarea>
-                    </p>
-
-                    <p>
-                        <input type="checkbox" id="contact-consent" name="contact_consent" required>
-                        <label for="contact-consent">I authorize the processing of my contact information for inquiry response</label>
-                    </p>
-                </fieldset>
-
-                <p>
-                    <button type="submit">Transmit Message</button>
-                    <button type="reset">Clear Form</button>
-                </p>
-            </form>
-            <hr>
-            <!-- div is utilized strictly to isolate the legal processing duration statement -->
-            <div>
-                <p>
-                    Inquiry Response Standard: 
-                    <!-- span isolates the turnaround period for distinct inline visual treatment -->
-                    <span>messages are answered within 24 business hours</span> of initial submission.
-                </p>
-            </div>
-        </section>
     </main>
 
-    <footer>
+    <footer class="site-footer">
         <p>Location: 55 Uly Dala Avenue (Basement floor), Astana, Kazakhstan.</p>
-        <p>Phone: <a href="tel:+77780480000">+7 (778) 048-00-00</a></p>
+        <p>Phone: <a href="tel:+77780486000">+7 (778) 048-60-00</a></p>
         <p>Email: <a href="mailto:salahuddin.academy@mail.ru">salahuddin.academy@mail.ru</a></p>
         <p>2GIS Map: <a href="https://2gis.kz/astana/firm/70000001078856416" target="_blank" rel="noopener noreferrer">View Salahuddin on 2GIS</a></p>
         <p>&copy; 2026 Salahuddin Martial Arts Academy. All rights reserved.</p>
     </footer>
+    <a class="back-to-top" href="#top">Back to top</a>
 </body>
 </html>

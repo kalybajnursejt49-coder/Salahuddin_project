@@ -1,0 +1,62 @@
+/* Tuleubayev Damir: Coaches, Schedule and Pricing. */
+
+/* Grid keeps coach cards aligned in two columns; the introduction spans both.
+   Unlike flex, the column tracks also align across separate rows. */
+.damir-page .page-layout {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    align-items: start;
+}
+.damir-page .page-intro, .damir-page .table-panel,
+.damir-page .form-panel, .damir-page .page-note { grid-column: 1 / -1; }
+
+.coach-card { align-self: stretch; }
+.coach-card .poster { width: 210px; margin: 0 auto 24px; }
+.coach-card p { font-size: 15px; }
+
+.branch-links, .damir-page .site-footer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+.branch-links { margin: 0; padding: 0; list-style: none; }
+.branch-links > li { flex: 1 1 180px; margin: 0; }
+.branch-links a { display: block; padding: 12px 20px; background: white; }
+.damir-page .site-footer > p { flex: 1 1 300px; }
+
+/* Centering 3: grid places the two price enquiry links in the middle. */
+.price-actions {
+    display: grid;
+    place-items: center;
+    gap: 8px;
+    padding: 20px;
+    background: #f5f4f0;
+    text-align: center;
+}
+.price-actions p { margin: 0; }
+
+/* ID marks the single prices introduction, which is also a possible link target. */
+#prices { border-top: 3px solid #80651f; }
+
+/* Specificity experiment 1: (0,1,0); the unique #prices rule below wins. */
+.price-intro { padding: 20px; }
+/* Specificity experiment 2: (1,0,0); resolve the conflict to 32px, without !important. */
+#prices { padding: 32px; }
+
+table { width: 100%; border-collapse: collapse; font-size: 15px; }
+caption { margin-bottom: 16px; text-align: left; font-weight: 700; }
+th, td { padding: 12px 16px; border-bottom: 1px solid rgb(216, 219, 211); text-align: left; }
+thead { background: #242824; color: white; }
+/* Only even data rows receive a background, making long timetables easier to read. */
+tbody tr:nth-child(even) { background: #f5f4f0; }
+tbody th { font-weight: 400; }
+
+.damir-page fieldset {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 24px;
+}
+.damir-page fieldset > p { flex: 1 1 280px; margin: 0; }
+.damir-page .choice-field { flex-basis: 100%; }
