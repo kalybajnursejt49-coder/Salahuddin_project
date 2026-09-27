@@ -1,0 +1,14 @@
+body { background: #f5f4f0; color: #242824; font-family: Arial, Helvetica, sans-serif; line-height: 1.6; }
+.site-header h1 { color: #242824; }
+a { color: #80651f; }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible { outline: 2px solid #80651f; outline-offset: 2px; }
+.navbar .nav-link.active { color: #fff; text-decoration: underline; text-underline-offset: 5px; }
+.content-panel { color: #242824; }
+.content-panel h2, .content-panel h3 { font-family: Georgia, 'Times New Roman', serif; }
+.poster img, figure img { max-width: 100%; height: auto; border-radius: .25rem; }
+figure { margin: 1rem 0; }
+figcaption { color: #6c757d; font-size: .875rem; }
+.practice-note { background: #f5f4f0; border-left: 4px solid #80651f; padding: .75rem; }
+fieldset { border: 1px solid #d8dbd3; border-radius: .25rem; padding: 1rem; margin-bottom: 1rem; }
+legend { float: none; width: auto; padding: 0 .25rem; }
+.back-to-top { z-index: 1030; }
