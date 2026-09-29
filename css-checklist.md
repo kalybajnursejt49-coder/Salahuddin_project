@@ -10,4 +10,4 @@
 | Custom table striping and hover rules | `table`, `table-striped`, `table-hover`, `table-responsive` |
 | Hand-written page spacing and alignment rules | Bootstrap spacing, text alignment and display utilities |
 
-The remaining `css/style.css` sets the academy colors and font, image sizing, focus outline, a few form details and the practice-note accent. It does not create a layout grid or navigation layout.
+The empty `base.css`, `damir.css` and `nurseyit.css` files were removed. Unstyled page-specific classes were removed from the HTML. The remaining `css/style.css` sets academy colors and fonts, image sizing, a focus outline and the practice-note accent; it does not create a layout grid or navigation layout.
