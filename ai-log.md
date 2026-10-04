@@ -40,3 +40,8 @@ No current membership prices were available in the project materials, so none we
 ## Update — 2026-10-05
 
 The form submit buttons now run browser validation and reveal a hidden confirmation message. Form details are not sent or stored. Page author metadata was removed, page titles use one pattern, and Back to top appears at desktop widths across the pages. The pricing page now links to the academy contact details and its 2GIS listing; no current prices could be verified, so no amounts were invented. The source quality pass recorded the code-level fixes. A teammate/device review, W3C validation, screenshots and verified prices remain open.
+
+
+## Assignment-scope correction — 2026-10-05
+
+Removed the custom `js/forms.js` file and both page references to it, as the midterm does not allow JavaScript. The form buttons are enabled `type="button"` controls ready for later JavaScript; the hidden confirmation areas stay in the HTML. Corrected the repeated schedule label and coach bio punctuation and sentence fragments. Checked `pricing.html`: it contains one HTML document with one main section, footer, and Bootstrap script.

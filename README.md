@@ -1,6 +1,6 @@
 # Salahuddin Academy
 
-A simple six-page website for Salahuddin Martial Arts Academy in Astana. It uses HTML, Bootstrap 5.3.3 and a small stylesheet. The forms show a confirmation message but do not send or save information.
+A simple six-page website for Salahuddin Martial Arts Academy in Astana. It uses HTML, Bootstrap 5.3.3 and a small stylesheet. The forms contain a hidden confirmation area for future JavaScript; they do not send or save information.
 
 ## Pages
 
@@ -32,9 +32,9 @@ Open `index.html` in a browser with an internet connection to load Bootstrap fro
 
 Review: Source review by Codex, 2026-10-05.
 
-Found: Disabled form buttons, no hidden confirmation state, inconsistent page metadata and Back to top visibility.
+Found: Disabled form buttons, custom JavaScript outside the assignment scope, a duplicate schedule label, coach text errors, inconsistent page metadata and Back to top visibility.
 
-Fixed: Forms validate in the browser and reveal a confirmation without sending or saving personal details. Page metadata and Back to top behavior are consistent.
+Fixed: The form buttons are enabled and ready for JavaScript. A hidden confirmation area remains in the HTML, and a note explains that forms do not send or save personal details. Page metadata and Back to top behavior are consistent.
 
 Still required: A teammate or another-device visual check, W3C validation, and screenshots.
 
