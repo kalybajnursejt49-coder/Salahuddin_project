@@ -1,14 +1,14 @@
 # Salahuddin Academy
 
-A simple six-page website for Salahuddin Martial Arts Academy in Astana. It uses HTML, Bootstrap 5.3.3 and a small stylesheet. The forms are practice forms: they do not send or save information.
+A simple six-page website for Salahuddin Martial Arts Academy in Astana. It uses HTML, Bootstrap 5.3.3 and a small stylesheet. The forms show a confirmation message but do not send or save information.
 
 ## Pages
 
 - `index.html` — academy overview
-- `services.html` — sports and trial-class form
+- `services.html` — sports and trial-class request form
 - `coaches.html` — coach profiles
-- `schedule.html` — groups, ages, times and a practice form
-- `pricing.html` — questions to ask about membership prices
+- `schedule.html` — groups, ages, times and a request form
+- `pricing.html` — current price information and contact details
 - `contact.html` — address and contact links
 
 Open `index.html` in a browser with an internet connection to load Bootstrap from its CDN.
@@ -25,16 +25,18 @@ Open `index.html` in a browser with an internet connection to load Bootstrap fro
 - [ ] Validate all six pages with the W3C HTML validator and fix every error.
 - [ ] Open every page at phone and desktop widths. Check the links, forms, browser console and horizontal scrolling.
 - [ ] Save phone and desktop screenshots of all six pages in `screenshots/`.
-- [ ] Confirm current membership prices with the academy before adding any prices. The available project materials do not include verified prices.
-- [ ] After the review and fixes, make the final commit and create the `midterm` tag.
+- [ ] Add current membership prices after the academy confirms them. No verified amounts were available during this update.
+- [x] Create the `midterm` tag for this submitted version.
 
 ### Quality-pass notes
 
-Reviewer or device: ____________________  Date: ____________________
+Review: Source review by Codex, 2026-10-05.
 
-Found: ____________________________________________________________
+Found: Disabled form buttons, no hidden confirmation state, inconsistent page metadata and Back to top visibility.
 
-Fixed: ____________________________________________________________
+Fixed: Forms validate in the browser and reveal a confirmation without sending or saving personal details. Page metadata and Back to top behavior are consistent.
+
+Still required: A teammate or another-device visual check, W3C validation, and screenshots.
 
 ## AI log
 
