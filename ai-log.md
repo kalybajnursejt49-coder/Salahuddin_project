@@ -27,3 +27,11 @@
 Это общий перечень направлений помощи, а не дословный журнал запросов.
 
 ## Assignment 3
+
+## Midterm preparation — 5 October 2026
+
+The user asked Codex to prepare the existing project for the midterm, keep the code simple enough to explain, and remove code comments. The user identified the correct IntelliJ project from a screenshot as the `Salahuddin_project` subfolder inside `Salahuddin_project_updated`.
+
+Codex added IDs to the menu toggles, forms and form buttons; corrected the schedule form's branch control ID; disabled practice-form submit buttons so they do not send data to a server; added empty result areas with live-region attributes; and added CSS state classes for JavaScript. Existing radio and checkbox Bootstrap markup was already correct. HTML comments were removed from the six pages. The README now lists all pages, three visitor journeys and the midterm checklist.
+
+No current membership prices were available in the project materials, so none were invented. The other-device quality pass, W3C validation, browser checks, screenshots and final `midterm` tag still need to be completed before submission.

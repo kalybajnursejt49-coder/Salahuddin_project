@@ -10,3 +10,10 @@ figcaption { color: #6c757d; font-size: .875rem; }
 .practice-note { background: #f5f4f0; border-left: 4px solid #80651f; padding: .75rem; }
 fieldset { border: 1px solid #d8dbd3; border-radius: .25rem; padding: 1rem; margin-bottom: 1rem; }
 legend { float: none; width: auto; padding: 0 .25rem; }
+
+.is-hidden { display: none !important; }
+.is-active { outline: 2px solid #80651f; outline-offset: 2px; }
+.is-selected { background: #f5f4f0; border-color: #80651f; }
+.is-error { border-color: #b02a37 !important; }
+.is-success { border-color: #146c43 !important; }
+.form-message { min-height: 3rem; padding: .75rem; border: 1px solid #d8dbd3; border-radius: .25rem; }

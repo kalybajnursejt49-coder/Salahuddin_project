@@ -1,19 +1,41 @@
 # Salahuddin Academy
 
-This is Assignment 3, a Bootstrap rebuild of the same six-page academy site from Assignment 2. The existing page topics and content remain in place. Bootstrap 5.3.3 provides the navigation, grid, spacing, forms, tables and responsive behavior; `css/style.css` keeps the academy colors, font and small visual corrections.
-
-## Run the site
-
-Open `index.html` in a browser with an internet connection so the Bootstrap CDN stylesheet and JavaScript bundle can load. The navbar collapses below the large breakpoint.
+A simple six-page website for Salahuddin Martial Arts Academy in Astana. It uses HTML, Bootstrap 5.3.3 and a small stylesheet. The forms are practice forms: they do not send or save information.
 
 ## Pages
 
-`index.html`, `services.html`, `coaches.html`, `schedule.html`, `pricing.html` and `contact.html`.
+- `index.html` — academy overview
+- `services.html` — sports and trial-class form
+- `coaches.html` — coach profiles
+- `schedule.html` — groups, ages, times and a practice form
+- `pricing.html` — questions to ask about membership prices
+- `contact.html` — address and contact links
 
-## CSS cleanup
+Open `index.html` in a browser with an internet connection to load Bootstrap from its CDN.
 
-`css-checklist.md` lists the Assignment 2 layout rules that Bootstrap replaced. Only `css/style.css` is linked by the pages.
+## Visitor journeys
 
-## Submission items to finish locally
+1. **Find the address and hours:** Start on Home. Open Contact and read the Uly Dala address and daily opening hours. Finish knowing where the branch is and when it is open.
+2. **Choose a class:** Start on Home. Open Services and choose a sport. Open Schedule and compare the branches, age groups, days and times. Finish with a group that fits the visitor.
+3. **Choose a coach:** Start on Home. Open Coaches and read the profiles. Follow the Schedule link and compare the listed groups for the coach's sport. Finish knowing which coach and class to ask about.
 
-The assignment requires four screenshots: one page at 375px, 768px and desktop width, plus the collapsed phone navigation. Capture them from the browser and save them in `screenshots/`. Validate all six pages with the W3C validator and correct any reported errors. The assignment also requires each student to make their own commits on at least three different days (six commits if working alone); these must be made from the student's own account.
+## Before submission
+
+- [ ] Ask a teammate to review pages they did not write, or open the site on another device. Record what was broken and what was fixed below.
+- [ ] Validate all six pages with the W3C HTML validator and fix every error.
+- [ ] Open every page at phone and desktop widths. Check the links, forms, browser console and horizontal scrolling.
+- [ ] Save phone and desktop screenshots of all six pages in `screenshots/`.
+- [ ] Confirm current membership prices with the academy before adding any prices. The available project materials do not include verified prices.
+- [ ] After the review and fixes, make the final commit and create the `midterm` tag.
+
+### Quality-pass notes
+
+Reviewer or device: ____________________  Date: ____________________
+
+Found: ____________________________________________________________
+
+Fixed: ____________________________________________________________
+
+## AI log
+
+AI assistance is recorded in `ai-log.md`.
