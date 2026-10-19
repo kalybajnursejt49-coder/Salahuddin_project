@@ -28,25 +28,3 @@
 
 ## Assignment 3
 
-## Midterm preparation — 5 October 2026
-
-The user asked Codex to prepare the existing project for the midterm, keep the code simple enough to explain, and remove code comments. The user identified the correct IntelliJ project from a screenshot as the `Salahuddin_project` subfolder inside `Salahuddin_project_updated`.
-
-Codex added IDs to the menu toggles, forms and form buttons; corrected the schedule form's branch control ID; disabled practice-form submit buttons so they do not send data to a server; added empty result areas with live-region attributes; and added CSS state classes for JavaScript. Existing radio and checkbox Bootstrap markup was already correct. HTML comments were removed from the six pages. The README now lists all pages, three visitor journeys and the midterm checklist.
-
-No current membership prices were available in the project materials, so none were invented. The other-device quality pass, W3C validation, browser checks, screenshots and final `midterm` tag still need to be completed before submission.
-
-
-## Update — 2026-10-05
-
-The form submit buttons now run browser validation and reveal a hidden confirmation message. Form details are not sent or stored. Page author metadata was removed, page titles use one pattern, and Back to top appears at desktop widths across the pages. The pricing page now links to the academy contact details and its 2GIS listing; no current prices could be verified, so no amounts were invented. The source quality pass recorded the code-level fixes. A teammate/device review, W3C validation, screenshots and verified prices remain open.
-
-
-## Assignment-scope correction — 2026-10-05
-
-Removed the custom `js/forms.js` file and both page references to it, as the midterm does not allow JavaScript. The form buttons are enabled `type="button"` controls ready for later JavaScript; the hidden confirmation areas stay in the HTML. Corrected the repeated schedule label and coach bio punctuation and sentence fragments. Checked `pricing.html`: it contains one HTML document with one main section, footer, and Bootstrap script.
-
-## Assignment 4–5 request — 19 October 2026
-
-The user asked Codex to complete Assignment 4–5 for the Salahuddin project with simple second-year-level code and no code comments. Codex read the assignment document, used the local midterm archive, wrote JavaScript and documentation, added only deferred script links to HTML, and tested the main browser interactions. This is AI-generated project work, not merely an explanation. The assignment document says AI may not write project code or documentation, so the student must disclose this and ask the instructor whether it can be submitted.
-
