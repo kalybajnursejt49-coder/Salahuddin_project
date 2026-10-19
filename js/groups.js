@@ -85,6 +85,7 @@ function createCard(group) {
     sport.checked = true;
     document.dispatchEvent(new CustomEvent('group-chosen',{detail:group.id}));
     servicePage.scrollIntoView();
+    document.querySelector('#applicant-name').focus();
   });
   inner.append(button);
   body.append(inner);
