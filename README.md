@@ -1,43 +1,44 @@
 # Salahuddin Academy
 
-A simple six-page website for Salahuddin Martial Arts Academy in Astana. It uses HTML, Bootstrap 5.3.3 and a small stylesheet. The forms contain a hidden confirmation area for future JavaScript; they do not send or save information.
+Six-page front-end site for Salahuddin Martial Arts Academy in Astana. Open `index.html` in a browser. Bootstrap 5.3.3 is loaded from its CDN, so an internet connection is needed for the intended layout and mobile navigation.
 
-## Pages
+The JavaScript starts from the local midterm archive. The six HTML pages were changed only to add deferred script links. `css/style.css` is unchanged. New controls, results, group rows and review cards are created with DOM methods.
 
-- `index.html` — academy overview
-- `services.html` — sports and trial-class request form
-- `coaches.html` — coach profiles
-- `schedule.html` — groups, ages, times and a request form
-- `pricing.html` — current price information and contact details
-- `contact.html` — address and contact links
+## Pages and visitor journeys
 
-Open `index.html` in a browser with an internet connection to load Bootstrap from its CDN.
+- Home: read about the academy and follow links to classes, coaches, schedule, prices and contact details. A random featured sport is a suggestion, not a promise of availability.
+- Services: filter published groups by sport, branch and age, choose a group, then submit a checked demonstration trial request.
+- Schedule: filter the same group data, see a result count and an empty state, then choose a published time and continue to the trial form.
+- Coaches: read the published coach profiles and add or remove practice reviews stored only in this browser.
+- Pricing: current prices were not confirmed in the supplied materials. Contact the academy for a current fee; the site does not calculate or collect payment.
+- Contact: use the existing phone, email and map links to confirm a real visit.
 
-## Visitor journeys
+The published group data comes from the September 2025 timetable already present in the midterm pages. Current capacity, fees, coach assignments and times need confirmation from the academy. A successful form creates only a demonstration reference. It sends nothing to a server and creates no booking. Reviews are also demonstrations, not verified academy testimonials.
 
-1. **Find the address and hours:** Start on Home. Open Contact and read the Uly Dala address and daily opening hours. Finish knowing where the branch is and when it is open.
-2. **Choose a class:** Start on Home. Open Services and choose a sport. Open Schedule and compare the branches, age groups, days and times. Finish with a group that fits the visitor.
-3. **Choose a coach:** Start on Home. Open Coaches and read the profiles. Follow the Schedule link and compare the listed groups for the coach's sport. Finish knowing which coach and class to ask about.
+## Functionality Plan
 
-## Before submission
+| Page | Visitor goal | Planned function and result | Responsible student |
+|---|---|---|---|
+| Services | Find an age-appropriate group | Sport, branch and age filters show matching groups, count, empty state and reset | Nurseyit Kalybai |
+| Services | Ask about a trial | Field-level checks compare age, sport, branch and date with the selected group; a demo summary confirms the choices | Nurseyit Kalybai |
+| Schedule | Compare published times | Data-generated rows can be filtered by sport, branch and age and link to the chosen group | Tuleubayev Damir |
+| Coaches | Share practice feedback | Review form checks name, rating and length, shows a character counter, and adds or removes cards | Tuleubayev Damir |
+| All pages | Navigate and use consistent group data | Shared `main.js` holds group information, rendering helpers and the home suggestion | Both students |
 
-- [ ] Ask a teammate to review pages they did not write, or open the site on another device. Record what was broken and what was fixed below.
-- [ ] Validate all six pages with the W3C HTML validator and fix every error.
-- [ ] Open every page at phone and desktop widths. Check the links, forms, browser console and horizontal scrolling.
-- [ ] Save phone and desktop screenshots of all six pages in `screenshots/`.
-- [ ] Add current membership prices after the academy confirms them. No verified amounts were available during this update.
-- [x] Create the `midterm` tag for this submitted version.
+These are implementation areas from the earlier project division. Commit authorship and individual contribution must be confirmed in the real Git repository before submission.
 
-### Quality-pass notes
+## Files
 
-Review: Source review by Codex, 2026-10-05.
+- `js/main.js`: shared data and reusable functions
+- `js/groups.js`: group finder and schedule rows
+- `js/forms.js`: trial and group request validation
+- `js/reviews.js`: demonstration review flow
+- `javascript-checklist.md`: exact files and line references
+- `evidence.md`: checks performed and remaining external checks
+- `ai-log.md`: AI assistance disclosure
 
-Found: Disabled form buttons, custom JavaScript outside the assignment scope, a duplicate schedule label, coach text errors, inconsistent page metadata and Back to top visibility.
+## Submission status
 
-Fixed: The form buttons are enabled and ready for JavaScript. A hidden confirmation area remains in the HTML, and a note explains that forms do not send or save personal details. Page metadata and Back to top behavior are consistent.
+The files in the local archive match the repository's `midterm` tag (`6a1abb6`). Work is being uploaded to an `assignment-4-5` branch created from that tag, leaving `master` and `midterm` unchanged. The required multi-day student commits cannot be produced retroactively. Do not label automated edits as student-authored commits.
 
-Still required: A teammate or another-device visual check, W3C validation, and screenshots.
-
-## AI log
-
-AI assistance is recorded in `ai-log.md`.
+The assignment document states that AI may explain concepts but may not write project code or documentation. The user explicitly requested this implementation from Codex; the assistance is disclosed in `ai-log.md`. The instructor must decide whether this work is eligible under the course policy.
