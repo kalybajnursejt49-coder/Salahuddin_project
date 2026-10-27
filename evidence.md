@@ -10,6 +10,7 @@ Checked on 19 and 27 October 2026 with Chrome in a local headless browser:
 - A demonstration review could be removed again.
 - Services showed a phone link for every matching group, a contact link for no results, and no old Choose action.
 - The form narrowed group choices by sport, branch and age, marked the selected group, and accepted a matching future group day.
+- Both forms rejected ten opening brackets as a phone number; a formatted number containing at least ten digits passed in a valid request.
 - Coach search hid unmatched profiles, showed an empty message and restored all four profiles after reset.
 - No horizontal overflow appeared on the six pages at 375 px, 768 px or 1280 px in this test.
 - `node --check` passed for the four JavaScript files used by the pages.

@@ -136,7 +136,9 @@ function validRequest() {
   latest.setDate(latest.getDate() + 89);
   check(nameInput,nameInput.value.trim().length >= 2,'Enter at least 2 characters.');
   check(emailInput,/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value.trim()),'Enter a valid email address.');
-  check(phoneInput,/^\+?[\d\s()-]{10,20}$/.test(phoneInput.value.trim()),'Enter a valid phone number.');
+  const phone = phoneInput.value.trim();
+  const digitCount = phone.replace(/\D/g,'').length;
+  check(phoneInput,/^\+?[\d\s()-]{10,20}$/.test(phone) && digitCount >= 10,'Enter a phone number with at least 10 digits.');
   check(ageInput,Number.isInteger(age) && age >= 4 && age <= 100,'Enter an age from 4 to 100.');
   check(branchInput,branchInput.value !== '', 'Choose a branch.');
   if (experienceInput) check(experienceInput,experienceInput.value !== '', 'Choose an experience level.');
