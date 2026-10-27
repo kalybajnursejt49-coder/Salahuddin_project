@@ -79,6 +79,8 @@ function selectedGroup() {
 
 function updateSummary() {
   const group = selectedGroup();
+  groupBox.classList.toggle('is-selected',Boolean(group));
+  groupBox.classList.toggle('is-active',Boolean(group));
   summary.textContent = group ? `${groupLabel(group)}${dateInput.value ? ` · preferred date ${dateInput.value}` : ''}. No place is reserved.` : 'Choose a published group to see the request summary.';
 }
 
@@ -92,7 +94,7 @@ function updateChoices() {
     return ageOK && sportOK && branchOK;
   });
   renderList(groupInput,choices,group => {
-    const option = element('option','',`${sportNames[group.sport]} · ${group.days.map(day => dayNames[day]).join('/')} ${group.time} · ${group.min}–${group.max === 100 ? 'adult' : group.max}`);
+    const option = element('option','',`${group.id}. ${branchNames[group.branch]} · ${group.time}`);
     option.value = String(group.id);
     return option;
   });

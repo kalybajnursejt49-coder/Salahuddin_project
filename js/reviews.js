@@ -1,5 +1,38 @@
 'use strict';
 
+const coachCards = document.querySelectorAll('main article.content-panel');
+const coachSearchBox = element('section','col-12 bg-white border rounded-3 shadow-sm p-4');
+const coachSearchLabel = element('label','form-label','Find a coach by name or sport');
+const coachSearch = element('input','form-control');
+coachSearch.type = 'search';
+coachSearch.id = 'coach-search';
+coachSearchLabel.htmlFor = coachSearch.id;
+const coachSearchCount = element('p','form-message mt-2');
+coachSearchCount.setAttribute('aria-live','polite');
+const clearCoachSearch = element('button','btn btn-outline-secondary','Clear search');
+clearCoachSearch.type = 'button';
+coachSearchBox.append(coachSearchLabel,coachSearch,coachSearchCount,clearCoachSearch);
+document.querySelector('main .row').prepend(coachSearchBox);
+
+function searchCoaches() {
+  const searchText = coachSearch.value.trim().toLowerCase();
+  let count = 0;
+  coachCards.forEach(card => {
+    const matches = card.textContent.toLowerCase().includes(searchText);
+    card.classList.toggle('is-hidden',!matches);
+    if (matches) count += 1;
+  });
+  coachSearchCount.textContent = count === 0 ? 'No coaches match. Try another word.' : `${count} of ${coachCards.length} coaches match.`;
+}
+
+coachSearch.addEventListener('input',searchCoaches);
+clearCoachSearch.addEventListener('click',() => {
+  coachSearch.value = '';
+  searchCoaches();
+  coachSearch.focus();
+});
+searchCoaches();
+
 const reviewsSection = element('section','col-12 bg-white border rounded-3 shadow-sm p-4');
 reviewsSection.append(element('h2','', 'Demonstration reviews'));
 reviewsSection.append(element('p','form-note','These practice reviews are saved only in this browser and are not sent to the academy.'));
@@ -111,6 +144,7 @@ reviewForm.addEventListener('submit',event => {
   [reviewName,reviewRating,reviewText].forEach(part => {
     part.error.textContent = '';
     part.field.classList.remove('is-error');
+    part.field.removeAttribute('aria-invalid');
   });
   let first = null;
   if (reviewName.field.value.trim().length < 2) {
@@ -129,6 +163,7 @@ reviewForm.addEventListener('submit',event => {
   status.classList.remove('is-hidden');
   if (first) {
     first.focus();
+    status.classList.remove('is-success');
     status.classList.add('is-error');
     status.textContent = 'Please correct the review fields.';
     return;

@@ -71,6 +71,9 @@ function createCard(group) {
   const inner = element('div','card-body');
   inner.append(element('h3','h5 card-title',sportNames[group.sport]));
   inner.append(element('p','card-text',groupLabel(group)));
+  const call = element('a','btn btn-outline-primary','Call about this group');
+  call.href = 'tel:+77780486000';
+  inner.append(call);
   body.append(inner);
   card.append(body);
   return card;
