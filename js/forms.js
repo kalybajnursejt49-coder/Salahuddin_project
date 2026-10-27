@@ -103,17 +103,6 @@ function updateChoices() {
   updateSummary();
 }
 
-function chooseGroup(id) {
-  const group = groups.find(item => item.id === id);
-  if (!group) return;
-  requestForm.querySelector(`[name="sport_direction"][value="${group.sport}"]`).checked = true;
-  branchInput.value = group.branch;
-  updateChoices();
-  groupInput.value = String(group.id);
-  updateSummary();
-}
-
-document.addEventListener('group-chosen',event => chooseGroup(event.detail));
 ageInput.addEventListener('input',updateChoices);
 branchInput.addEventListener('change',updateChoices);
 requestForm.querySelectorAll('[name="sport_direction"]').forEach(radio => radio.addEventListener('change',updateChoices));
@@ -191,5 +180,3 @@ maximumDate.setDate(maximumDate.getDate() + 90);
 dateInput.min = localDate(minimumDate);
 dateInput.max = localDate(maximumDate);
 updateChoices();
-const requestedGroup = Number(new URLSearchParams(location.search).get('group'));
-if (requestedGroup) chooseGroup(requestedGroup);

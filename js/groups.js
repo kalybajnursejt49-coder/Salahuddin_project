@@ -62,11 +62,6 @@ function createRow(group) {
     if (index === 0) cell.scope = 'row';
     row.append(cell);
   });
-  const cell = element('td');
-  const link = element('a','btn btn-sm btn-outline-primary','Choose');
-  link.href = `services.html?group=${group.id}#enrollment-section`;
-  cell.append(link);
-  row.append(cell);
   return row;
 }
 
@@ -76,18 +71,6 @@ function createCard(group) {
   const inner = element('div','card-body');
   inner.append(element('h3','h5 card-title',sportNames[group.sport]));
   inner.append(element('p','card-text',groupLabel(group)));
-  const button = element('button','btn btn-outline-primary','Choose this group');
-  button.type = 'button';
-  button.addEventListener('click',() => {
-    document.querySelectorAll('.is-selected').forEach(item => item.classList.remove('is-selected','is-active'));
-    card.classList.add('is-selected','is-active');
-    const sport = document.querySelector(`[name="sport_direction"][value="${group.sport}"]`);
-    sport.checked = true;
-    document.dispatchEvent(new CustomEvent('group-chosen',{detail:group.id}));
-    servicePage.scrollIntoView();
-    document.querySelector('#applicant-name').focus();
-  });
-  inner.append(button);
   body.append(inner);
   card.append(body);
   return card;
@@ -99,20 +82,18 @@ if (servicePage) {
   finder.append(list);
 }
 
-if (schedulePage) {
-  document.querySelectorAll('#uly-dala, #turan-19').forEach(section => {
-    const heading = element('th','', 'Next step');
-    heading.scope = 'col';
-    section.querySelector('thead tr').append(heading);
-  });
-}
-
 function updateGroups() {
   const found = groups.filter(matches);
   count.textContent = `${found.length} of ${groups.length} published groups match.`;
   if (servicePage) {
     renderList(list,found,createCard);
-    if (found.length === 0) list.append(element('p','col-12 form-note','No matching groups. Change the filters or contact the academy.'));
+    if (found.length === 0) {
+      const message = element('p','col-12 form-note','No matching groups. Change the filters or ');
+      const link = element('a','','contact the academy');
+      link.href = 'contact.html#contacts';
+      message.append(link,'.');
+      list.append(message);
+    }
   }
   if (schedulePage) {
     Object.keys(branchNames).forEach(branch => {
@@ -122,8 +103,11 @@ function updateGroups() {
       renderList(body,branchGroups,createRow);
       if (branchGroups.length === 0) {
         const row = element('tr');
-        const cell = element('td','', 'No matching groups at this location.');
-        cell.colSpan = 5;
+        const cell = element('td','', 'No matching groups here. Change the filters or ');
+        const link = element('a','','contact the academy');
+        link.href = 'contact.html#contacts';
+        cell.append(link,'.');
+        cell.colSpan = 4;
         row.append(cell);
         body.append(row);
       }
