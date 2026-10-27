@@ -1,4 +1,4 @@
-# Salahuddin Martial Arts Academy
+# Salahuddin Academy
 
 Six-page front-end site for Salahuddin Martial Arts Academy in Astana. Open `index.html` in a browser. Bootstrap 5.3.3 is loaded from its CDN, so an internet connection is needed for the intended layout and mobile navigation.
 
@@ -40,6 +40,6 @@ These are implementation areas from the earlier project division. Commit authors
 
 ## Submission status
 
-This version starts from the repository's `midterm` tag (`6a1abb6`). The Assignment 4–5 work is on the `assignment-4-5` branch; the `midterm` tag stays unchanged. The required multi-day student commits cannot be produced retroactively.
+This version starts from the repository's `midterm` tag (`6a1abb6`). The Assignment 4–5 work is on `master` and remains on the `assignment-4-5` branch; the `midterm` tag stays unchanged. The required multi-day student commits cannot be produced retroactively.
 
 ## AI use
