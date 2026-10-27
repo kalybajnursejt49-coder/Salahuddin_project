@@ -7,8 +7,8 @@ The JavaScript starts from the local midterm archive. The six HTML pages were ch
 ## Pages and visitor journeys
 
 - Home: read about the academy and follow links to classes, coaches, schedule, prices and contact details. A random featured sport is a suggestion, not a promise of availability.
-- Services: filter published groups by sport, branch and age, choose a group, then submit a checked demonstration trial request.
-- Schedule: filter the same group data, see a result count and an empty state, then choose a published time and continue to the trial form.
+- Services: filter published groups by sport, branch and age, then use the trial form to select a group and submit a checked demonstration request.
+- Schedule: filter the same group data and see a result count. When no groups match, a link leads to the academy's contact details.
 - Coaches: read the published coach profiles and add or remove practice reviews stored only in this browser.
 - Pricing: current prices were not confirmed in the supplied materials. Contact the academy for a current fee; the site does not calculate or collect payment.
 - Contact: use the existing phone, email and map links to confirm a real visit.
@@ -21,7 +21,7 @@ The published group data comes from the September 2025 timetable already present
 |---|---|---|---|
 | Services | Find an age-appropriate group | Sport, branch and age filters show matching groups, count, empty state and reset | Nurseyit Kalybai |
 | Services | Ask about a trial | Field-level checks compare age, sport, branch and date with the selected group; a demo summary confirms the choices | Nurseyit Kalybai |
-| Schedule | Compare published times | Data-generated rows can be filtered by sport, branch and age and link to the chosen group | Tuleubayev Damir |
+| Schedule | Compare published times | Data-generated rows can be filtered by sport, branch and age; an empty result links to contact details | Tuleubayev Damir |
 | Coaches | Share practice feedback | Review form checks name, rating and length, shows a character counter, and adds or removes cards | Tuleubayev Damir |
 | All pages | Navigate and use consistent group data | Shared `main.js` holds group information, rendering helpers and the home suggestion | Both students |
 
