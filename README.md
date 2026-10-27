@@ -1,32 +1,45 @@
 # Salahuddin Martial Arts Academy
 
-A responsive six-page website for a martial arts academy in Astana. The project uses plain HTML, CSS and JavaScript so that the structure and interactions are easy to follow in a student presentation.
+Six-page front-end site for Salahuddin Martial Arts Academy in Astana. Open `index.html` in a browser. Bootstrap 5.3.3 is loaded from its CDN, so an internet connection is needed for the intended layout and mobile navigation.
 
-## Pages
+The JavaScript starts from the local midterm archive. The six HTML pages were changed only to add deferred script links. `css/style.css` is unchanged. New controls, results, group rows and review cards are created with DOM methods.
 
-- `index.html` — academy introduction and links to the main sections
-- `services.html` — four classes and a trial-class enquiry form
-- `coaches.html` — coach profiles based on academy posts
-- `schedule.html` — published class timetable with location and sport filters
-- `pricing.html` — questions to ask the academy; no unconfirmed prices are shown
-- `contact.html` — contact details and location links
+## Pages and visitor journeys
 
-## Run the site
+- Home: read about the academy and follow links to classes, coaches, schedule, prices and contact details. A random featured sport is a suggestion, not a promise of availability.
+- Services: filter published groups by sport, branch and age, call the academy about a group, or use the trial form to select a group and submit a checked demonstration request.
+- Schedule: filter the same group data and see a result count. When no groups match, a link leads to the academy's contact details.
+- Coaches: search the published coach profiles and add or remove practice reviews stored only in this browser.
+- Pricing: current prices were not confirmed in the supplied materials. Contact the academy for a current fee; the site does not calculate or collect payment.
+- Contact: use the existing phone, email and map links to confirm a real visit.
 
-Open `index.html` in a browser. The fonts load from Google Fonts when an internet connection is available. All page styles, images and interactions are stored in this project.
+The published group data comes from the September 2025 timetable already present in the midterm pages. Current capacity, fees, coach assignments and times need confirmation from the academy. A successful form creates only a demonstration reference. It sends nothing to a server and creates no booking. Reviews are also demonstrations, not verified academy testimonials.
 
-## How the main features work
+## Functionality Plan
 
-- The navigation links connect the six HTML pages. On a small screen, the menu button opens and closes the navigation.
-- The schedule filter buttons compare each timetable row's `data-branch` and `data-sport` values, then hide rows that do not match.
-- The trial form uses built-in browser checks for required fields. JavaScript displays a demo confirmation after submission. The form does not send or store personal details.
-- The FAQ answers use the browser's built-in `<details>` and `<summary>` elements.
+| Page | Visitor goal | Planned function | Expected result | Responsible student |
+|---|---|---|---|---|
+| Services | Find an age-appropriate group | Filter by sport, branch and age | Matching cards, count, empty message and reset | Nurseyit Kalybai |
+| Services | Ask about a trial | Check the form and compare age, sport, branch and date with the group | Field errors or a clear demonstration request summary | Nurseyit Kalybai |
+| Schedule | Compare published times | Filter group rows by sport, branch and age | Matching rows, count, reset and contact link when empty | Tuleubayev Damir |
+| Coaches | Find a coach | Search profiles by name or sport | Matching profiles, count, empty message and reset | Tuleubayev Damir |
+| Coaches | Share practice feedback | Check the review form and create or remove cards | A dated demonstration review or field errors | Tuleubayev Damir |
+| All pages | Use consistent group data | Share group data and rendering functions in `main.js` | The same group details on Services, Schedule and forms | Both students |
 
-## Project folders
+These are implementation areas from the earlier project division. Commit authorship and individual contribution must be confirmed in the real Git repository before submission.
 
-- `css/style.css` — shared colours, page layout, responsive rules and accessibility styles
-- `js/main.js` — mobile menu, timetable filters and enquiry form interaction
-- `images/` — academy and coach images used by the pages
+## Files
 
-Published coach and schedule details are based on academy posts from September 2025. Contact the academy to confirm current groups, fees, locations and availability.
-\n
+- `js/main.js`: shared data and reusable functions
+- `js/groups.js`: group finder and schedule rows
+- `js/forms.js`: trial and group request validation
+- `js/reviews.js`: demonstration review flow
+- `javascript-checklist.md`: exact files and line references
+- `evidence.md`: checks performed and remaining external checks
+- `ai-log.md`: student-maintained AI log
+
+## Submission status
+
+This version starts from the repository's `midterm` tag (`6a1abb6`). The Assignment 4–5 work is on the `assignment-4-5` branch; the `midterm` tag stays unchanged. The required multi-day student commits cannot be produced retroactively.
+
+## AI use
