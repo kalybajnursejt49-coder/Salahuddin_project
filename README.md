@@ -43,3 +43,11 @@ These are implementation areas from the earlier project division. Commit authors
 This version starts from the repository's `midterm` tag (`6a1abb6`). The Assignment 4–5 work is on `master` and remains on the `assignment-4-5` branch; the `midterm` tag stays unchanged. The required multi-day student commits cannot be produced retroactively.
 
 ## AI use
+
+## Assignment 6 jQuery
+
+Services and Schedule use jQuery for group filtering, dynamic cards with visible times and a delegated button that selects a group in the request form, and the request form. Coaches uses jQuery for live search. The former plain-JavaScript versions of those three features are in js/old-js-version.js and are not loaded by any page. js/jquery-assignment.js contains the jQuery code and loads after jQuery 3.7.1 from its CDN. The review feature remains in js/reviews.js.
+
+Form validation shows an error beside each invalid field, checks trimmed name, email, phone, age, group, date and consent, and shows a demonstration success message before resetting. Nothing is submitted to a server. Browser-side checks do not replace server validation for a real service.
+
+The group selection button is delegated to the card list because those buttons are created by the filter. It fills the sport, branch and group in the request form and scrolls there. The form error fade-out, form status fade-in and scroll animation are functional effects. No new CSS rules or hand-written HTML elements were added. CDN access is needed for jQuery.
