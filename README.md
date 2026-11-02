@@ -36,13 +36,10 @@ These are implementation areas from the earlier project division. Commit authors
 - `js/reviews.js`: demonstration review flow
 - `javascript-checklist.md`: exact files and line references
 - `evidence.md`: checks performed and remaining external checks
-- `ai-log.md`: student-maintained AI log
 
 ## Submission status
 
 This version starts from the repository's `midterm` tag (`6a1abb6`). The Assignment 4–5 work is on `master` and remains on the `assignment-4-5` branch; the `midterm` tag stays unchanged. The required multi-day student commits cannot be produced retroactively.
-
-## AI use
 
 ## Assignment 6 jQuery
 
