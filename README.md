@@ -38,10 +38,13 @@ These are implementation areas from the earlier project division. Commit authors
 - `js/reviews.js`: demonstration review flow
 - `javascript-checklist.md`: exact files and line references
 - `evidence.md`: checks performed and remaining external checks
+- `ai-log.md`: student-maintained AI log
 
 ## Submission status
 
 This version starts from the repository's `midterm` tag (`6a1abb6`). The Assignment 4–5 work is on `master` and remains on the `assignment-4-5` branch; the `midterm` tag stays unchanged. The required multi-day student commits cannot be produced retroactively.
+
+## AI use
 
 ## Assignment 6 jQuery
 
@@ -57,3 +60,19 @@ The group selection button is delegated to the card list because those buttons a
 - Services and Schedule extend the earlier jQuery group finder with day-of-week and time-of-day filters. Schedule also builds a selected-day overview ordered by start time across both branches. Reset clears the new filters as well.
 - Visitors can save published groups from Services or Schedule and review or remove them from the header on any page. The local profile in the header keeps visitor details on this device without creating an account. The form now shows sport, branch, group time, age and preferred date together before submission, with a button that returns to the choices.
 - The local profile now also asks for a phone number and age. Both it and the trial forms accept names with letters and common name separators, require exactly ten national phone digits after the optional `+7`, and reject ages above 99.
+
+## Visitor flow update
+
+Schedule is the class finder. Its sign-up links carry the selected group to the only registration form, on Services. Services explains the four sports and the steps to join. Registration stores details on the device only. Pricing shows explicitly estimated plans and a budget calculator, using linked Astana club examples checked on 10 November 2026. Contact adds call, WhatsApp and map actions plus a first-visit checklist.
+
+## Languages
+
+The bottom-left language control switches between English, Russian and Kazakh. `js/language.js` translates static and dynamically generated text, validation and accessible labels, preserves entered form values and saves the language on this device. User-written reviews are not translated. Original poster images remain unchanged.
+
+## Registration details and class requests
+
+Registration is the single place for name, email, phone and age. The Services form displays those details with an edit button, validates the profile before accepting a demonstration request, and filters groups using the saved age. There is no preferred-date field. Updating or clearing the profile immediately updates the request form. Older profiles must add an email before submitting.
+
+## Favourites and guided journey
+
+Favourites are explicitly separate from requests; selecting a group no longer automatically saves it. Schedule can match the registration age and preferred sport, resetting other filters and explaining the result. Missing registration can be completed before matching continues. Home, Schedule and Services now explain the start, selection and final confirmation steps. Successful demonstration requests retain their summary and link to Contact; editing the request clears the previous result. All new labels have English, Russian and Kazakh translations.

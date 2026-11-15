@@ -1,6 +1,6 @@
 # HTML tag checklist
 
-Предложенное распределение страниц между Nurseyit Kalybai и Tuleubayev Damir: см. README.md.
+Предложенное распределение страниц между Nurseyit Kalybai и Tuleubayev Damir: см. README.md. Помощь ИИ указана в ai-log.md.
 
 | Tag | File | Line | Assigned student |
 |---|---|---:|---|

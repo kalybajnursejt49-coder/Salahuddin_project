@@ -83,7 +83,7 @@ if (home) {
       answer:'The published groups meet at Uly Dala 55 or Turan 19. Check the branch listed for your group before visiting.'
     },
     {
-      question:'Does the trial form book a place?',
+      question:'Does the registration form book a place?',
       answer:'No. The form is a front-end demonstration. It does not send your details or reserve a place.'
     },
     {
@@ -100,6 +100,14 @@ if (home) {
     faq.append(details);
   }
   home.parentElement.append(faq);
+  const start = guidePanel('Start here',[
+    '1. Choose a group on Schedule. Favourites are optional: they keep classes for later.',
+    '2. Select Sign up for this class, complete Registration and check your request.',
+    '3. Review the result, then contact the academy to confirm a real visit.'
+  ]);
+  start.querySelector('ol').classList.add('list-unstyled');
+  start.append(visitorLink('Choose a group','schedule.html'));
+  home.parentElement.prepend(start);
 }
 
 const profileKey = 'salahuddin-local-profile';
@@ -131,13 +139,8 @@ savedGroupIds = Array.isArray(savedGroupIds)
 
 const pageHeader = document.querySelector('header#top');
 if (pageHeader) {
-  const titleBlock = element('div','flex-grow-1');
-  titleBlock.append(pageHeader.querySelector('p'), pageHeader.querySelector('h1'));
-  pageHeader.classList.add('d-flex','align-items-center','justify-content-between','flex-wrap','gap-3');
-  pageHeader.append(titleBlock);
-
   function iconButton(label, drawing) {
-    const button = element('button','btn btn-outline-dark rounded-circle p-2 d-inline-flex align-items-center justify-content-center position-relative');
+    const button = element('button','btn btn-outline-light rounded-3 p-2 d-inline-flex align-items-center justify-content-center position-relative');
     button.type = 'button';
     button.title = label;
     button.setAttribute('aria-label',label);
@@ -154,22 +157,25 @@ if (pageHeader) {
   }
 
   const actions = element('div','d-flex align-items-center gap-3 ms-auto');
-  const profileButton = iconButton('Open local profile','<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>');
-  const savedButton = iconButton('Open selected classes','<rect x="3" y="4" width="18" height="17" rx="2"/><path d="M7 2v4M17 2v4M3 9h18M8 14h3M8 17h7"/>');
+  const profileButton = iconButton('Registration','<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>');
+  const savedButton = iconButton('Open favourite classes','<rect x="3" y="4" width="18" height="17" rx="2"/><path d="M7 2v4M17 2v4M3 9h18M8 14h3M8 17h7"/>');
   const savedCount = element('span','position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark');
   savedCount.setAttribute('aria-hidden','true');
   savedButton.append(savedCount);
   actions.append(profileButton,savedButton);
-  pageHeader.append(actions);
+  document.querySelector('#academyNavbar').append(actions);
+  actions.classList.add('ms-lg-3','py-2','flex-wrap');
+  profileButton.append(element('span','ms-2','Register'));
+  savedButton.append(element('span','ms-2','Favourites'));
 
   const profileDialog = element('dialog','border rounded-3 shadow p-4 col-11 col-md-6');
   profileDialog.id = 'local-profile-dialog';
   profileDialog.setAttribute('aria-labelledby','local-profile-title');
   const profileHeading = element('div','d-flex justify-content-between align-items-start gap-3 mb-3');
-  const profileTitle = element('h2','h4 mb-0','Local profile');
+  const profileTitle = element('h2','h4 mb-0','Registration');
   profileTitle.id = 'local-profile-title';
   profileHeading.append(profileTitle,closeButton(profileDialog));
-  profileDialog.append(profileHeading,element('p','small text-muted','This is a profile saved in this browser only. It does not create an account or send your details to the academy.'));
+  profileDialog.append(profileHeading,element('p','small text-muted','Demo registration: your details stay on this device. No online account is created. For a child, ask a parent or guardian to help.'));
   const profileForm = element('form');
   profileForm.noValidate = true;
   const nameLabel = element('label','form-label','Your name');
@@ -183,6 +189,18 @@ if (pageHeader) {
   nameError.id = 'local-profile-name-error';
   nameError.setAttribute('aria-live','polite');
   nameInput.setAttribute('aria-describedby',nameError.id);
+  const emailLabel = element('label','form-label','Email Address:');
+  emailLabel.htmlFor = 'local-profile-email';
+  const emailInput = element('input','form-control mb-2');
+  emailInput.id = 'local-profile-email';
+  emailInput.type = 'email';
+  emailInput.autocomplete = 'email';
+  emailInput.maxLength = 254;
+  const emailError = element('span','text-danger small d-block mb-3');
+  emailError.id = 'local-profile-email-error';
+  emailError.setAttribute('aria-live','polite');
+  emailInput.setAttribute('aria-describedby',emailError.id);
+  emailInput.addEventListener('input',()=>{emailError.textContent='';emailInput.removeAttribute('aria-invalid');});
   const phoneLabel = element('label','form-label','Mobile phone number');
   phoneLabel.htmlFor = 'local-profile-phone';
   const phoneInput = element('input','form-control mb-2');
@@ -219,28 +237,37 @@ if (pageHeader) {
     option.value = key;
     sportInput.append(option);
   }
-  const saveProfile = element('button','btn btn-primary','Save local profile');
+  const saveProfile = element('button','btn btn-dark','Save my details');
   saveProfile.type = 'submit';
   const clearProfile = element('button','btn btn-outline-secondary ms-2','Clear');
   clearProfile.type = 'button';
   const profileStatus = element('p','small mt-3 mb-0');
   profileStatus.setAttribute('aria-live','polite');
-  profileForm.append(nameLabel,nameInput,nameError,phoneLabel,phoneInput,phoneError,ageLabel,ageInput,ageError,sportLabel,sportInput,saveProfile,clearProfile,profileStatus);
+  profileForm.append(nameLabel,nameInput,nameError,emailLabel,emailInput,emailError,phoneLabel,phoneInput,phoneError,ageLabel,ageInput,ageError,sportLabel,sportInput,saveProfile,clearProfile,profileStatus);
   profileDialog.append(profileForm);
   document.body.append(profileDialog);
 
   function showProfile() {
     nameInput.value = typeof localProfile.name === 'string' ? localProfile.name : '';
+    emailInput.value = typeof localProfile.email === 'string' ? localProfile.email : '';
     phoneInput.value = typeof localProfile.phone === 'string' ? localProfile.phone : '';
     ageInput.value = Number.isInteger(localProfile.age) ? String(localProfile.age) : '';
     sportInput.value = Object.hasOwn(sportNames,localProfile.sport) ? localProfile.sport : '';
-    for (const [field,error] of [[nameInput,nameError],[phoneInput,phoneError],[ageInput,ageError]]) {
+    for (const [field,error] of [[nameInput,nameError],[emailInput,emailError],[phoneInput,phoneError],[ageInput,ageError]]) {
       error.textContent = '';
       field.removeAttribute('aria-invalid');
     }
-    profileStatus.textContent = nameInput.value ? 'Saved in this browser as ' + nameInput.value + '.' : 'No local profile saved yet.';
+    profileStatus.textContent = nameInput.value ? 'Saved in this browser as ' + nameInput.value + '.' : 'Enter your details below.';
     profileDialog.showModal();
   }
+  window.salahuddinProfile = {
+    get: () => ({...localProfile}),
+    open: showProfile,
+    valid: () => typeof localProfile.name === 'string' && validPersonName(localProfile.name)
+      && typeof localProfile.email === 'string' && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(localProfile.email)
+      && typeof localProfile.phone === 'string' && validPhone(localProfile.phone)
+      && Number.isInteger(localProfile.age) && localProfile.age >= 4 && localProfile.age <= 99
+  };
   profileButton.addEventListener('click',showProfile);
   nameInput.addEventListener('input',() => {
     nameInput.value = cleanPersonName(nameInput.value);
@@ -256,9 +283,11 @@ if (pageHeader) {
   profileForm.addEventListener('submit',event => {
     event.preventDefault();
     const name = nameInput.value.trim();
+    const email = emailInput.value.trim();
     const phone = phoneInput.value.trim();
     const age = Number(ageInput.value);
     const checks = [
+      [emailInput,emailError,/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) && emailInput.checkValidity(),'Enter a valid email address.'],
       [nameInput,nameError,validPersonName(name),'Use letters only, with spaces, hyphens or apostrophes.'],
       [phoneInput,phoneError,validPhone(phone),'Enter +7 and exactly 10 more digits, or 10 digits without +7.'],
       [ageInput,ageError,Number.isInteger(age) && age >= 4 && age <= 99,'Enter an age from 4 to 99.']
@@ -274,43 +303,47 @@ if (pageHeader) {
       }
     }
     if (firstInvalid) { firstInvalid.focus(); return; }
-    localProfile = {name,phone,age,sport:sportInput.value};
+    localProfile = {name,email,phone,age,sport:sportInput.value};
     profileStatus.textContent = writeLocal(profileKey,localProfile)
-      ? 'Local profile saved in this browser. No account was created.'
+      ? 'Your details are saved on this device. You can change or clear them here.'
       : 'Profile kept for this visit only. Browser storage is unavailable.';
+    window.dispatchEvent(new Event('salahuddin:profile-change'));
+    profileDialog.close();
   });
   clearProfile.addEventListener('click',() => {
     localProfile = {};
     nameInput.value = '';
+    emailInput.value = '';
     phoneInput.value = '';
     ageInput.value = '';
     sportInput.value = '';
-    for (const [field,error] of [[nameInput,nameError],[phoneInput,phoneError],[ageInput,ageError]]) {
+    for (const [field,error] of [[nameInput,nameError],[emailInput,emailError],[phoneInput,phoneError],[ageInput,ageError]]) {
       field.removeAttribute('aria-invalid');
       error.textContent = '';
     }
     try { localStorage.removeItem(profileKey); } catch (error) { /* The in-memory profile is still cleared. */ }
-    profileStatus.textContent = 'Local profile cleared.';
+    profileStatus.textContent = 'Your saved details have been cleared.';
+    window.dispatchEvent(new Event('salahuddin:profile-change'));
   });
 
   const savedDialog = element('dialog','border rounded-3 shadow p-4 col-11 col-md-6');
   savedDialog.id = 'saved-groups-dialog';
   savedDialog.setAttribute('aria-labelledby','saved-groups-title');
   const savedHeading = element('div','d-flex justify-content-between align-items-start gap-3 mb-3');
-  const savedTitle = element('h2','h4 mb-0','Selected classes');
+  const savedTitle = element('h2','h4 mb-0','Favourite classes');
   savedTitle.id = 'saved-groups-title';
   savedHeading.append(savedTitle,closeButton(savedDialog));
   const savedList = element('ul','list-group mb-3');
-  const savedStatus = element('p','small text-muted mb-0','Saved only in this browser. Published times may have changed; selecting a class does not reserve a place.');
+  const savedStatus = element('p','small text-muted mb-0','Favourites help you compare classes later. Adding a favourite does not send a request or reserve a place.');
   savedDialog.append(savedHeading,savedList,savedStatus);
   document.body.append(savedDialog);
 
   function renderSavedGroups() {
     savedCount.textContent = String(savedGroupIds.length);
-    savedButton.setAttribute('aria-label',`Open selected classes (${savedGroupIds.length})`);
+    savedButton.setAttribute('aria-label',`Open favourite classes (${savedGroupIds.length})`);
     savedList.replaceChildren();
     if (!savedGroupIds.length) {
-      savedList.append(element('li','list-group-item','No classes selected yet. Choose a group on the Services or Schedule page.'));
+      savedList.append(element('li','list-group-item','No favourite classes yet. Use Add to favourites on Schedule to keep a class for later.'));
       return;
     }
     for (const id of savedGroupIds) {
@@ -326,7 +359,8 @@ if (pageHeader) {
         renderSavedGroups();
         window.dispatchEvent(new Event('salahuddin:saved-groups-change'));
       });
-      item.append(description,remove);
+      const signup = visitorLink('Sign up','services.html?group=' + group.id + '#enrollment-section');
+      item.append(description,signup,remove);
       savedList.append(item);
     }
   }
@@ -346,4 +380,95 @@ if (pageHeader) {
   window.salahuddinSavedGroups = {add:addSavedGroup,has:id => savedGroupIds.includes(Number(id))};
   savedButton.addEventListener('click',() => { renderSavedGroups(); savedDialog.showModal(); });
   renderSavedGroups();
+}
+
+// Simple visitor guides use the existing Bootstrap classes.
+function visitorLink(text, href) {
+  const link = element('a','btn btn-outline-dark me-2 mb-2',text);
+  link.href = href;
+  return link;
+}
+function guidePanel(title, lines) {
+  const panel = element('section','col-12 bg-white border rounded-3 shadow-sm p-4');
+  panel.append(element('h2','h3',title));
+  const list = element('ol','mb-3');
+  for (const line of lines) list.append(element('li','mb-2',line));
+  panel.append(list);
+  return panel;
+}
+const servicesPanel = document.querySelector('#enrollment-section');
+if (servicesPanel) {
+  document.querySelector('header h1').textContent = 'Sports and class registration';
+  servicesPanel.querySelector('h2').textContent = 'Class registration form';
+  const intro = servicesPanel.previousElementSibling;
+  intro.replaceChildren(element('h2','h3','Choose your sport'));
+  const descriptions = {
+    karate:'Practise punches, kicks and controlled movements.',
+    taekwondo:'Practise kicking techniques, balance and coordination.',
+    judo:'Learn throws and grappling techniques on a mat.',
+    'muay-thai':'Practise striking techniques using punches, kicks, knees and elbows.'
+  };
+  for (const [sport, description] of Object.entries(descriptions)) {
+    const card = element('div','border rounded-3 p-3 mb-3');
+    card.append(element('h3','h5',sportNames[sport]),element('p','mb-2',description));
+    card.append(visitorLink('See class times','schedule.html'));
+    intro.append(card);
+  }
+  const guide = guidePanel('How to join a class',[
+    'Open Schedule to find a class for your age and a convenient time.',
+    'Choose “Sign up for this class”. Your choice will appear in the form here.',
+    'Complete Registration once, then check your selected class. For a child, ask a parent or guardian to help.',
+    'This practice form does not send a booking. Call the academy to confirm your visit.'
+  ]);
+  guide.append(visitorLink('Find a class','schedule.html'),visitorLink('Call the academy','tel:+77780486000'));
+  servicesPanel.parentElement.prepend(guide);
+}
+const pricePanel = document.querySelector('#prices');
+if (pricePanel) {
+  pricePanel.classList.remove('col-md-6');
+  pricePanel.replaceChildren(element('h2','h3','Example training prices'));
+  pricePanel.append(element('p','form-note','Estimated prices for this student website, based on examples from other Astana clubs. These are not confirmed Salahuddin prices. Ask the academy before paying.'));
+  const plans = [
+    {label:'One group class',price:4500,detail:'One visit. Useful for estimating the cost of a single session.'},
+    {label:'12 group classes',price:26000,detail:'Example monthly budget for regular group training.'},
+    {label:'8 individual classes',price:70000,detail:'Example budget for training individually with a coach.'}
+  ];
+  const row = element('div','row g-3 mb-4');
+  for (const plan of plans) {
+    const card = element('div','col-12 col-md-4');
+    const body = element('div','card card-body h-100');
+    body.append(element('h3','h5',plan.label),element('p','h3',plan.price.toLocaleString('en-US') + ' KZT'),element('p','',plan.detail));
+    card.append(body);row.append(card);
+  }
+  pricePanel.append(row,element('h3','h4','Estimate your budget'));
+  const label = element('label','form-label','Choose a training plan');label.htmlFor='budget-plan';
+  const select = element('select','form-select mb-3');select.id='budget-plan';
+  plans.forEach((plan,index) => {const option=element('option','',plan.label);option.value=String(index);select.append(option);});
+  const countLabel = element('label','form-label','Number of people (1–10)');countLabel.htmlFor='budget-people';
+  const count = element('input','form-control mb-3');count.id='budget-people';count.type='number';count.min='1';count.max='10';count.value='1';
+  const total = element('p','form-message');total.setAttribute('aria-live','polite');
+  function updateBudget() {
+    const people=Number(count.value);
+    total.textContent=Number.isInteger(people)&&people>=1&&people<=10
+      ? 'Estimated total: ' + (plans[Number(select.value)].price*people).toLocaleString('en-US') + ' KZT. Equipment is not included. No payment is taken here.'
+      : 'Enter a whole number from 1 to 10.';
+  }
+  select.addEventListener('change',updateBudget);count.addEventListener('input',updateBudget);
+  pricePanel.append(label,select,countLabel,count,total,visitorLink('Find a class','schedule.html'),visitorLink('Confirm the price','tel:+77780486000'));
+  const sources=element('details','mt-3');sources.append(element('summary','','Price examples used (checked 10 November 2026)'));
+  sources.append(visitorLink('Olympic Training Center: 25,000 KZT','https://odo-astana.kz/en/sections-complex/dzhiu-dzhitsu/'),visitorLink('Astana Boxing Club: group prices','https://astana-bc.kz/prajs-list'),visitorLink('BORZ: group and individual prices','https://borz-school.kz/'));
+  pricePanel.append(sources);updateBudget();
+}
+const contactsPanel = document.querySelector('#contacts');
+if (contactsPanel) {
+  const help=guidePanel('Contact us in three easy steps',[
+    'Have the sport, student age, class time and branch ready.',
+    'Call or send a WhatsApp message to ask about available places and the current price.',
+    'Confirm the address, entrance and what to bring before travelling.'
+  ]);
+  help.append(visitorLink('Call +7 778 048 60 00','tel:+77780486000'),visitorLink('Ask on WhatsApp','https://wa.me/77780486000?text='+encodeURIComponent('Hello! I would like to ask about classes. Sport: __. Student age: __. Preferred branch and time: __. Please confirm availability, price and what to bring.')),visitorLink('Open Uly Dala on 2GIS','https://2gis.kz/astana/firm/70000001078856416'));
+  help.append(element('p','mt-2','Uly Dala 55: basement floor. Turan 19 appears in the published timetable; confirm that branch with the academy before visiting.'));
+  const checklist=element('details','border rounded-3 p-3');checklist.append(element('summary','fw-semibold','What should I ask before my first visit?'));
+  checklist.append(element('p','mt-2 mb-0','Ask whether the group accepts beginners of your age, whether a parent should attend, what clothing or equipment is required, and how payment and missed classes work.'));
+  help.append(checklist);contactsPanel.parentElement.prepend(help);
 }

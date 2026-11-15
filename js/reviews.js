@@ -47,7 +47,7 @@ reviewText.field.after(counter);
 reviewText.field.addEventListener('input',() => {
   counter.textContent = `${reviewText.field.value.length}/300 characters`;
 });
-const submit = element('button','btn btn-primary','Add demonstration review');
+const submit = element('button','btn btn-dark','Add demonstration review');
 submit.type = 'submit';
 const status = element('p','form-message mt-3 is-hidden');
 status.setAttribute('aria-live','polite');
@@ -75,9 +75,9 @@ function saveReviews() {
 function createReview(item) {
   const card = element('article','col-12 col-md-6');
   const body = element('div','card h-100 p-3');
-  body.append(element('h3','h5',item.name));
+  const author = element('h3','h5',item.name); author.translate = false; body.append(author);
   body.append(element('p','small text-muted',`${item.rating}/5 · ${new Date(item.date).toLocaleString()}`));
-  body.append(element('p','',item.text));
+  const content = element('p','',item.text); content.translate = false; body.append(content);
   const remove = element('button','btn btn-sm btn-outline-danger','Remove');
   remove.type = 'button';
   remove.addEventListener('click',() => {
