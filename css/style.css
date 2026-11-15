@@ -27,7 +27,7 @@ legend { float: none; width: auto; padding: 0 .25rem; }
 #language-switcher .btn { min-width: 44px; }
 .text-muted, .text-secondary, figcaption { color: #49534c !important; }
 a { color: #6a5316; }
-@media (max-width: 575.98px) { .back-to-top { bottom: 5rem; } #language-switcher { max-width: calc(100vw - 2rem); } }
+@media (max-width: 575.98px) { .back-to-top { bottom: 7rem; } #language-switcher { max-width: calc(100vw - 2rem); } body { padding-bottom: 7rem !important; } }
 
 .poster-thumb { width: 180px; max-width: 100%; height: auto; }
 .poster img { width: 270px; max-width: 100%; height: auto; }

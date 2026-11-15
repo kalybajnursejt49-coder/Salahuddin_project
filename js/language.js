@@ -317,7 +317,7 @@ Before choosing a class, ask which group has spaces and whether beginners can jo
   const originals = new WeakMap();
   const attributes = new WeakMap();
   const bar=document.createElement('div');
-  bar.id='language-switcher';bar.className='p-2 bg-white border rounded-3 shadow d-flex gap-1';
+  bar.id='language-switcher';bar.className='p-2 bg-white border rounded-3 shadow d-flex flex-wrap gap-1';
   bar.style.zIndex='1050';bar.setAttribute('role','group');bar.setAttribute('aria-label','Language / Язык / Тіл');
   for(const [code,label] of [['en','English'],['ru','Русский'],['kk','Қазақша']]) {
     const button=document.createElement('button');button.type='button';button.className='btn btn-outline-dark';button.textContent=label;button.lang=code;
