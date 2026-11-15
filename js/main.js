@@ -158,7 +158,7 @@ if (pageHeader) {
 
   const actions = element('div','d-flex align-items-center gap-3 ms-auto');
   const profileButton = iconButton('Registration','<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>');
-  const savedButton = iconButton('Open favourite classes','<rect x="3" y="4" width="18" height="17" rx="2"/><path d="M7 2v4M17 2v4M3 9h18M8 14h3M8 17h7"/>');
+  const savedButton = iconButton('Open favourite classes','<path d="M12 21s-9-5.5-9-11a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 5.5-9 11-9 11Z"/>');
   const savedCount = element('span','position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark');
   savedCount.setAttribute('aria-hidden','true');
   savedButton.append(savedCount);
@@ -178,7 +178,7 @@ if (pageHeader) {
   profileDialog.append(profileHeading,element('p','small text-muted','Demo registration: your details stay on this device. No online account is created. For a child, ask a parent or guardian to help.'));
   const profileForm = element('form');
   profileForm.noValidate = true;
-  const nameLabel = element('label','form-label','Your name');
+  const nameLabel = element('label','form-label','Student name');
   nameLabel.htmlFor = 'local-profile-name';
   const nameInput = element('input','form-control mb-2');
   nameInput.id = 'local-profile-name';
@@ -189,7 +189,7 @@ if (pageHeader) {
   nameError.id = 'local-profile-name-error';
   nameError.setAttribute('aria-live','polite');
   nameInput.setAttribute('aria-describedby',nameError.id);
-  const emailLabel = element('label','form-label','Email Address:');
+  const emailLabel = element('label','form-label','Email address');
   emailLabel.htmlFor = 'local-profile-email';
   const emailInput = element('input','form-control mb-2');
   emailInput.id = 'local-profile-email';
@@ -350,7 +350,7 @@ if (pageHeader) {
       const group = groups.find(item => item.id === id);
       const item = element('li','list-group-item d-flex justify-content-between align-items-start gap-3');
       const description = element('span','small',groupLabel(group));
-      const remove = element('button','btn btn-sm btn-outline-danger','Remove');
+      const remove = element('button','btn btn-outline-danger','Remove');
       remove.type = 'button';
       remove.setAttribute('aria-label',`Remove ${sportNames[group.sport]} at ${branchNames[group.branch]} ${group.time}`);
       remove.addEventListener('click',() => {
@@ -398,7 +398,7 @@ function guidePanel(title, lines) {
 }
 const servicesPanel = document.querySelector('#enrollment-section');
 if (servicesPanel) {
-  document.querySelector('header h1').textContent = 'Sports and class registration';
+  document.querySelector('header h1').textContent = 'Services';
   servicesPanel.querySelector('h2').textContent = 'Class registration form';
   const intro = servicesPanel.previousElementSibling;
   intro.replaceChildren(element('h2','h3','Choose your sport'));
@@ -425,39 +425,18 @@ if (servicesPanel) {
 }
 const pricePanel = document.querySelector('#prices');
 if (pricePanel) {
-  pricePanel.classList.remove('col-md-6');
-  pricePanel.replaceChildren(element('h2','h3','Example training prices'));
-  pricePanel.append(element('p','form-note','Estimated prices for this student website, based on examples from other Astana clubs. These are not confirmed Salahuddin prices. Ask the academy before paying.'));
-  const plans = [
-    {label:'One group class',price:4500,detail:'One visit. Useful for estimating the cost of a single session.'},
-    {label:'12 group classes',price:26000,detail:'Example monthly budget for regular group training.'},
-    {label:'8 individual classes',price:70000,detail:'Example budget for training individually with a coach.'}
-  ];
-  const row = element('div','row g-3 mb-4');
-  for (const plan of plans) {
-    const card = element('div','col-12 col-md-4');
-    const body = element('div','card card-body h-100');
-    body.append(element('h3','h5',plan.label),element('p','h3',plan.price.toLocaleString('en-US') + ' KZT'),element('p','',plan.detail));
-    card.append(body);row.append(card);
-  }
-  pricePanel.append(row,element('h3','h4','Estimate your budget'));
-  const label = element('label','form-label','Choose a training plan');label.htmlFor='budget-plan';
-  const select = element('select','form-select mb-3');select.id='budget-plan';
-  plans.forEach((plan,index) => {const option=element('option','',plan.label);option.value=String(index);select.append(option);});
-  const countLabel = element('label','form-label','Number of people (1–10)');countLabel.htmlFor='budget-people';
-  const count = element('input','form-control mb-3');count.id='budget-people';count.type='number';count.min='1';count.max='10';count.value='1';
-  const total = element('p','form-message');total.setAttribute('aria-live','polite');
+  const select = pricePanel.querySelector('#budget-plan');
+  const count = pricePanel.querySelector('#budget-people');
+  const total = pricePanel.querySelector('#budget-total');
   function updateBudget() {
-    const people=Number(count.value);
-    total.textContent=Number.isInteger(people)&&people>=1&&people<=10
-      ? 'Estimated total: ' + (plans[Number(select.value)].price*people).toLocaleString('en-US') + ' KZT. Equipment is not included. No payment is taken here.'
+    const people = Number(count.value);
+    total.textContent = Number.isInteger(people) && people >= 1 && people <= 10
+      ? 'Estimated total: ' + (Number(select.value) * people).toLocaleString('ru-RU').replace(/\u00a0/g,' ') + ' ₸. Equipment is not included. No payment is taken here.'
       : 'Enter a whole number from 1 to 10.';
   }
-  select.addEventListener('change',updateBudget);count.addEventListener('input',updateBudget);
-  pricePanel.append(label,select,countLabel,count,total,visitorLink('Find a class','schedule.html'),visitorLink('Confirm the price','tel:+77780486000'));
-  const sources=element('details','mt-3');sources.append(element('summary','','Price examples used (checked 10 November 2026)'));
-  sources.append(visitorLink('Olympic Training Center: 25,000 KZT','https://odo-astana.kz/en/sections-complex/dzhiu-dzhitsu/'),visitorLink('Astana Boxing Club: group prices','https://astana-bc.kz/prajs-list'),visitorLink('BORZ: group and individual prices','https://borz-school.kz/'));
-  pricePanel.append(sources);updateBudget();
+  select.addEventListener('change', updateBudget);
+  count.addEventListener('input', updateBudget);
+  updateBudget();
 }
 const contactsPanel = document.querySelector('#contacts');
 if (contactsPanel) {
@@ -466,8 +445,8 @@ if (contactsPanel) {
     'Call or send a WhatsApp message to ask about available places and the current price.',
     'Confirm the address, entrance and what to bring before travelling.'
   ]);
-  help.append(visitorLink('Call +7 778 048 60 00','tel:+77780486000'),visitorLink('Ask on WhatsApp','https://wa.me/77780486000?text='+encodeURIComponent('Hello! I would like to ask about classes. Sport: __. Student age: __. Preferred branch and time: __. Please confirm availability, price and what to bring.')),visitorLink('Open Uly Dala on 2GIS','https://2gis.kz/astana/firm/70000001078856416'));
-  help.append(element('p','mt-2','Uly Dala 55: basement floor. Turan 19 appears in the published timetable; confirm that branch with the academy before visiting.'));
+  help.append(visitorLink('Call +7 778 048 60 00','tel:+77780486000'),visitorLink('Ask on WhatsApp','https://wa.me/77780486000'),visitorLink('Open Uly Dala on 2GIS','https://2gis.kz/astana/firm/70000001078856416'));
+  help.append(element('p','mt-2','Uly Dala 55: basement floor. Turan Avenue 19, Astana: confirm the current group and entrance before visiting.'));
   const checklist=element('details','border rounded-3 p-3');checklist.append(element('summary','fw-semibold','What should I ask before my first visit?'));
   checklist.append(element('p','mt-2 mb-0','Ask whether the group accepts beginners of your age, whether a parent should attend, what clothing or equipment is required, and how payment and missed classes work.'));
   help.append(checklist);contactsPanel.parentElement.prepend(help);

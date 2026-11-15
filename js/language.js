@@ -2,14 +2,13 @@
 
 (() => {
   const rows = `Home|Главная|Басты бет
-Services|Направления и запись|Бағыттар және жазылу
+Services|Услуги|Қызметтер
 Coaches|Тренеры|Жаттықтырушылар
 Schedule|Расписание|Сабақ кестесі
 Pricing|Цены|Бағалар
 Contact|Контакты|Байланыс
 Salahuddin Academy|Академия Salahuddin|Salahuddin академиясы
 Salahuddin Martial Arts Academy|Академия единоборств Salahuddin|Salahuddin жекпе-жек академиясы
-Sports and class registration|Направления и запись на занятия|Бағыттар және сабаққа жазылу
 Class registration form|Запись на занятие|Сабаққа жазылу
 Our coaches|Наши тренеры|Біздің жаттықтырушылар
 Membership prices|Стоимость занятий|Сабақ бағалары
@@ -17,8 +16,6 @@ Contact the academy|Связаться с академией|Академиям�
 Training schedule|Расписание занятий|Сабақ кестесі
 Register|Регистрация|Тіркелу
 Registration|Регистрация|Тіркелу
-My classes|Мои занятия|Менің сабақтарым
-Selected classes|Выбранные занятия|Таңдалған сабақтар
 Close|Закрыть|Жабу
 Clear|Очистить|Тазарту
 Remove|Удалить|Жою
@@ -108,8 +105,6 @@ Choose a matching published group.|Выберите подходящую гру�
 Choose a group day within the next 90 days.|Выберите день занятий вашей группы в ближайшие 90 дней.|Алдағы 90 күн ішінен тобыңыздың сабақ күнін таңдаңыз.
 Confirm this is a demonstration.|Подтвердите, что это учебная форма.|Бұл оқу нысаны екенін растаңыз.
 Please correct the marked fields.|Исправьте отмеченные поля.|Белгіленген жолдарды түзетіңіз.
-Example training prices|Примерная стоимость занятий|Сабақтардың болжалды бағасы
-Estimated prices for this student website, based on examples from other Astana clubs. These are not confirmed Salahuddin prices. Ask the academy before paying.|Примерные цены для учебного сайта на основе предложений других клубов Астаны. Это не подтверждённый прайс Salahuddin. Перед оплатой уточните цену в академии.|Оқу сайтына арналған болжалды бағалар Астананың басқа клубтарының ұсыныстарына негізделген. Бұл Salahuddin-нің расталған бағалары емес. Төлем алдында академиядан нақтылаңыз.
 One group class|Одно групповое занятие|Бір топтық сабақ
 12 group classes|12 групповых занятий|12 топтық сабақ
 8 individual classes|8 индивидуальных занятий|8 жеке сабақ
@@ -121,8 +116,6 @@ Choose a training plan|Выберите вариант занятий|Жатты
 Number of people (1–10)|Количество человек (1–10)|Адам саны (1–10)
 Enter a whole number from 1 to 10.|Введите целое число от 1 до 10.|1 мен 10 аралығындағы бүтін санды енгізіңіз.
 Confirm the price|Уточнить цену|Бағаны нақтылау
-Price examples used (checked 10 November 2026)|Источники цен (проверены 10 ноября 2026 года)|Баға дереккөздері (2026 жылғы 10 қарашада тексерілген)
-Questions before paying|Что уточнить перед оплатой|Төлем алдында не сұрау керек
 What is the price for my age group and sport?|Сколько стоят занятия для моего возраста и вида спорта?|Менің жасым мен спорт түрім үшін сабақ қанша тұрады?
 How many classes does the membership include?|Сколько занятий входит в абонемент?|Абонементке қанша сабақ кіреді?
 When does the membership start and expire?|Когда начинается и заканчивается абонемент?|Абонемент қашан басталып, қашан аяқталады?
@@ -155,7 +148,6 @@ Before your first visit|Перед первым посещением|Алғаш�
 Choose the sport you want to try.|Выберите интересующий вид спорта.|Қызықтыратын спорт түрін таңдаңыз.
 Find a group for your age and a suitable time.|Найдите группу по возрасту и удобному времени.|Жасыңызға және ыңғайлы уақытқа сай топ табыңыз.
 Ask the academy about available places, the price and what to bring.|Уточните свободные места, цену и что взять с собой.|Бос орындарды, бағаны және не әкелу керегін нақтылаңыз.
-Back to the academy introduction|Вернуться к описанию академии|Академия туралы бөлімге оралу
 Questions before your first class|Вопросы перед первым занятием|Алғашқы сабақ алдындағы сұрақтар
 Where do classes take place?|Где проходят занятия?|Сабақтар қайда өтеді?
 The published groups meet at Uly Dala 55 or Turan 19. Check the branch listed for your group before visiting.|По расписанию занятия проходят на Улы Дала, 55 или Туран, 19. Перед визитом проверьте филиал своей группы.|Кесте бойынша сабақтар Ұлы Дала, 55 немесе Тұран, 19 мекенжайында өтеді. Барар алдында тобыңыздың филиалын тексеріңіз.
@@ -204,14 +196,10 @@ Your details were not sent or saved. Please contact the academy to confirm your 
 The tables show the times published by the academy in September 2025. Ask the academy to confirm the current group before visiting.|В таблицах указано время из публикаций академии за сентябрь 2025 года. Перед визитом уточните актуальное расписание группы.|Кестелерде академияның 2025 жылғы қыркүйекте жариялаған уақыттары берілген. Барар алдында топтың қазіргі кестесін нақтылаңыз.
 Uly Dala 55 — published September 2025|Улы Дала, 55 — опубликовано в сентябре 2025 года|Ұлы Дала, 55 — 2025 жылғы қыркүйекте жарияланған
 Turan 19 — published September 2025|Туран, 19 — опубликовано в сентябре 2025 года|Тұран, 19 — 2025 жылғы қыркүйекте жарияланған
-Sport / coach|Вид спорта / тренер|Спорт түрі / жаттықтырушы
 Age (years)|Возраст (лет)|Жасы (жыл)
 Start with the address, then check the sport, age range and time. Some sports have both morning and evening groups. Saturday times can differ from weekday times. An age written with a plus sign means that age and older.|Сначала выберите адрес, затем вид спорта, возраст и время. Есть утренние и вечерние группы. В субботу время может отличаться. Знак «+» после возраста означает «и старше».|Алдымен мекенжайды, содан кейін спорт түрін, жасты және уақытты таңдаңыз. Таңғы және кешкі топтар бар. Сенбідегі уақыт өзгеше болуы мүмкін. Жастан кейінгі «+» белгісі «және одан үлкен» дегенді білдіреді.
-The Uly Dala karate poster lists some overlapping times. They are copied as published; ask the academy which group you should attend. The posters do not name a coach for every group, so those names have not been guessed.|На афише карате на Улы Дала некоторые занятия пересекаются по времени. Данные перенесены из публикации — уточните свою группу в академии. Тренеры указаны не для всех групп, поэтому недостающие имена не добавлены.|Ұлы Даладағы каратэ афишасында кейбір сабақтардың уақыты қабаттасады. Деректер жарияланымнан алынған — тобыңызды академиядан нақтылаңыз. Барлық топтың жаттықтырушысы көрсетілмеген, сондықтан жетіспейтін есімдер қосылмады.
-These posts do not tell us whether places are still available or whether a group has moved. Use the|Публикации не подтверждают наличие мест или перенос группы. Откройте|Жарияланымдар бос орындардың бар-жоғын немесе топтың ауысқанын растамайды. Мына бетті ашыңыз:
 contact page|страницу контактов|байланыс беті
 to check before your first visit.|и уточните всё перед первым визитом.|және алғашқы бару алдында бәрін нақтылаңыз.
-These coach details come from the academy's posts dated 3 September 2025. Experience is shown as it was listed in those posts.|Сведения о тренерах взяты из публикаций академии от 3 сентября 2025 года. Опыт указан на дату публикации.|Жаттықтырушылар туралы мәліметтер академияның 2025 жылғы 3 қыркүйектегі жарияланымдарынан алынған. Тәжірибе сол күнгі деректер бойынша көрсетілген.
 Raimbek Tomataev|Раимбек Томатаев|Раимбек Томатаев
 Arlan Amanzhol|Арлан Аманжол|Арлан Аманжол
 Aisunkar Donenbaev|Айсункар Доненбаев|Айсұңқар Дөненбаев
@@ -222,27 +210,19 @@ Aisunkar Donenbaev - judo coach.|Айсункар Доненбаев — тре�
 Olzhas Mukhamedgaliyev - Muay Thai coach.|Олжас Мухамедгалиев — тренер по муай-тай.|Олжас Мұхамедғалиев — муай-тай жаттықтырушысы.
 Raimbek is the founder of Salahuddin Academy. He has a second dan black belt and holds the title of candidate for the Master of Sports of Kazakhstan. He has seven years of coaching experience. He also coached champions of Kazakhstan, Eurasia and the world.|Раимбек — основатель академии Salahuddin, обладатель чёрного пояса второго дана и кандидат в мастера спорта Казахстана. По публикации академии, у него семь лет тренерского опыта; он подготовил чемпионов Казахстана, Евразии и мира.|Раимбек — Salahuddin академиясының негізін қалаушы, екінші дан қара белбеу иегері және Қазақстанның спорт шеберлігіне үміткер. Академия жарияланымына сәйкес, оның жеті жылдық жаттықтырушылық тәжірибесі бар; ол Қазақстан, Еуразия және әлем чемпиондарын дайындаған.
 Arlan trains taekwondo athletes. He holds the title of candidate master of sports, has won international competitions, and has four years of coaching experience. He is also a medalist of the Confederation Cup and the Universiade.|Арлан тренирует спортсменов по тхэквондо. Кандидат в мастера спорта, победитель международных соревнований. По публикации, имеет четыре года тренерского опыта, является призёром Кубка конфедерации и Универсиады.|Арлан таэквондо спортшыларын жаттықтырады. Спорт шеберлігіне үміткер, халықаралық жарыстардың жеңімпазы. Жарияланымға сәйкес, төрт жылдық жаттықтырушылық тәжірибесі бар, Конфедерация кубогы мен Универсиада жүлдегері.
-Aisunkar is a belt wrestling master of sports and a candidate for Master of Sports in judo, sambo and Kazakh wrestling. He is the champion of Kazakhstan in belt wrestling. The academy post also lists four years of experience.|Айсункар — мастер спорта по борьбе на поясах и кандидат в мастера спорта по дзюдо, самбо и казахской борьбе. Чемпион Казахстана по борьбе на поясах. В публикации академии указан опыт четыре года.|Айсұңқар — белбеу күресінен спорт шебері, дзюдо, самбо және қазақ күресінен спорт шеберлігіне үміткер. Белбеу күресінен Қазақстан чемпионы. Академия жарияланымында төрт жылдық тәжірибе көрсетілген.
 Olzhas is a certified Thai boxing coach and a Master of Sports of Kazakhstan. He has 9 years of coaching experience and also trained at Phuket Fight Club in Thailand in 2014, 2015, and 2022.|Олжас — сертифицированный тренер по тайскому боксу и мастер спорта Казахстана. По публикации, имеет 9 лет тренерского опыта. Тренировался в Phuket Fight Club в Таиланде в 2014, 2015 и 2022 годах.|Олжас — тай боксынан сертификатталған жаттықтырушы және Қазақстанның спорт шебері. Жарияланымға сәйкес, 9 жылдық жаттықтырушылық тәжірибесі бар. 2014, 2015 және 2022 жылдары Таиландтағы Phuket Fight Club-та жаттыққан.
 See the|Посмотрите|Мына жерден қараңыз:
 schedule|расписание|сабақ кестесі
 for the groups shown in the academy's posts.|для групп из публикаций академии.|академия жарияланымдарындағы топтар үшін.
-Olympic Training Center: 25,000 KZT|Центр олимпийской подготовки: 25 000 ₸|Олимпиадалық даярлау орталығы: 25 000 ₸
-Astana Boxing Club: group prices|Astana Boxing Club: групповые занятия|Astana Boxing Club: топтық сабақтар
-BORZ: group and individual prices|BORZ: групповые и индивидуальные занятия|BORZ: топтық және жеке сабақтар
 Ask about cancellations and missed classes before making a payment. The academy can explain its current terms. This site does not take payments or issue memberships.|Перед оплатой уточните правила отмены и пропуска занятий. Академия объяснит действующие условия. Этот сайт не принимает оплату и не выдаёт абонементы.|Төлем алдында сабақтан бас тарту және өткізіп алу ережелерін нақтылаңыз. Академия қазіргі шарттарды түсіндіреді. Бұл сайт төлем қабылдамайды және абонемент бермейді.
 Call the academy: +7 (778) 048-60-00|Позвонить в академию: +7 (778) 048-60-00|Академияға қоңырау шалу: +7 (778) 048-60-00
 Ask whether the membership is monthly, how many classes it includes, and what happens if a class is missed.|Уточните срок абонемента, количество занятий и правила пропусков.|Абонемент мерзімін, сабақ санын және өткізіп алу ережелерін нақтылаңыз.
-The academy's 2GIS listing gives the address as 55 Uly Dala Avenue, Astana, on the basement floor. Check the entrance on the map before your first visit.|В карточке академии на 2GIS указан адрес: проспект Улы Дала, 55, Астана, цокольный этаж. Перед первым визитом проверьте вход на карте.|Академияның 2GIS карточкасындағы мекенжай: Ұлы Дала даңғылы, 55, Астана, жертөле қабаты. Алғашқы бару алдында картадан кіреберісті тексеріңіз.
-The listing shows opening hours of 09:00 to 22:30 every day. Opening hours are not the same as class times: each sport has its own timetable.|В карточке указан режим работы: ежедневно с 09:00 до 22:30. Это часы работы зала; у каждого вида спорта своё расписание.|Карточкада күн сайын 09:00-ден 22:30-ға дейін жұмыс істейтіні көрсетілген. Бұл залдың жұмыс уақыты; әр спорттың өз сабақ кестесі бар.
 Contact number from the listing's WhatsApp link:|Телефон из ссылки WhatsApp в карточке:|Карточкадағы WhatsApp сілтемесінен алынған нөмір:
-The academy's 2025 posts also show groups at Turan 19. Ask which branch your chosen group uses today. Confirm the time, available places, trial price and clothes or equipment needed before travelling.|В публикациях академии за 2025 год есть группы на Туран, 19. Уточните текущий филиал своей группы, время, свободные места, цену первого занятия и нужную экипировку.|Академияның 2025 жылғы жарияланымдарында Тұран, 19 мекенжайындағы топтар бар. Тобыңыздың қазіргі филиалын, уақытын, бос орындарын, алғашқы сабақ бағасын және қажетті жабдықты нақтылаңыз.
 You can compare the published groups on the|Сравнить группы можно на|Топтарды мына жерден салыстыруға болады:
 schedule page|странице расписания|сабақ кестесі беті
 . For an actual enquiry, use the contact details above. The|. Для реального обращения используйте контакты выше.|. Нақты өтініш үшін жоғарыдағы байланыс деректерін пайдаланыңыз.
 class registration form|Форма записи на занятия|Сабаққа жазылу нысаны
 is on the sports page.|находится на странице направлений.|бағыттар бетінде орналасқан.
-This group does not match the age in the form. Update the age to choose it.|Группа не соответствует указанному возрасту. Проверьте возраст в форме.|Топ көрсетілген жасқа сәйкес келмейді. Нысандағы жасты тексеріңіз.
 No matching groups. Change the filters or|Подходящих групп нет. Измените фильтры или|Қолайлы топтар жоқ. Сүзгілерді өзгертіңіз немесе
 contact the academy|свяжитесь с академией|академиямен байланысыңыз
 Karate group shown on the academy timetable|Группа карате на афише академии|Академия афишасындағы каратэ тобы
@@ -276,6 +256,51 @@ Start here|Начните здесь|Осы жерден бастаңыз
 Step 1 of 3: choose a group. Sign up opens the request form; favourites only keep a class for later.|Шаг 1 из 3: выберите группу. «Записаться» открывает заявку, а «В избранное» сохраняет занятие для сравнения.|3 қадамның 1-қадамы: топ таңдаңыз. «Жазылу» өтінімді ашады, ал «Таңдаулыларға қосу» сабақты кейінге сақтайды.
 Step 2 of 3: check your group and registration details, then check the request.|Шаг 2 из 3: проверьте группу и данные регистрации, затем нажмите «Проверить заявку».|3 қадамның 2-қадамы: топ пен тіркелу деректерін тексеріп, «Өтінімді тексеру» түймесін басыңыз.
 Step 3 of 3: your practice request is ready. Nothing was sent. Contact the academy to confirm a real visit.|Шаг 3 из 3: учебная заявка готова. Она никуда не отправлена. Свяжитесь с академией, чтобы подтвердить реальное посещение.|3 қадамның 3-қадамы: оқу өтінімі дайын. Ол ешқайда жіберілген жоқ. Нақты келуді растау үшін академиямен байланысыңыз.`.split("\n").forEach(row=>{const [en,ru,kk]=row.split("|");dictionary.set(en,[en,ru,kk]);});
+  `Skip to content|Перейти к содержимому|Мазмұнға өту
+Student name|Имя участника|Қатысушының аты
+Email address|Электронная почта|Электрондық пошта
+Select martial art|Выберите вид спорта|Спорт түрін таңдаңыз
+Preferred class date|Желаемая дата занятия|Қалаған сабақ күні
+Parent or guardian name|Имя родителя или опекуна|Ата-ананың немесе қамқоршының аты
+Choose a future date on a day when this group meets.|Выберите будущую дату в день занятий выбранной группы.|Таңдалған топ жаттығатын болашақ күнді таңдаңыз.
+Enter a parent or guardian name for a child.|Для ребёнка укажите имя родителя или опекуна.|Бала үшін ата-анасының немесе қамқоршысының атын енгізіңіз.
+Estimated training prices|Ориентировочные цены|Болжалды бағалар
+Indicative prices. Please confirm current fees with the academy before paying.|Ориентировочные цены. Перед оплатой уточните стоимость в академии.|Болжалды бағалар. Төлем алдында құнын академиядан нақтылаңыз.
+One visit.|Одно посещение.|Бір рет бару.
+Estimated monthly plan.|Ориентировочный месячный абонемент.|Болжалды айлық абонемент.
+Individual training estimate.|Ориентировочная стоимость индивидуальных занятий.|Жеке сабақтардың болжалды құны.
+Turan Avenue 19, Astana|Проспект Туран, 19, Астана|Тұран даңғылы, 19, Астана
+Monday–Sunday, 09:00–22:30.|Понедельник–воскресенье, 09:00–22:30.|Дүйсенбі–жексенбі, 09:00–22:30.
+Opening hours: Monday–Sunday, 09:00–22:30.|Часы работы: понедельник–воскресенье, 09:00–22:30.|Жұмыс уақыты: дүйсенбі–жексенбі, 09:00–22:30.
+Phone:|Телефон:|Телефон:
+Meet our coaches and explore their classes.|Познакомьтесь с тренерами и выберите занятие.|Жаттықтырушылармен танысып, сабақ таңдаңыз.
+Coach in martial arts uniform|Тренер в форме для единоборств|Жекпе-жек киіміндегі жаттықтырушы
+Karate coach and academy founder.|Тренер по карате и основатель академии.|Каратэ жаттықтырушысы және академия негізін қалаушы.
+Taekwondo coach.|Тренер по тхэквондо.|Таэквондо жаттықтырушысы.
+Judo coach.|Тренер по дзюдо.|Дзюдо жаттықтырушысы.
+Muay thai coach.|Тренер по муай-тай.|Муай-тай жаттықтырушысы.
+He has four years of coaching experience.|Его тренерский стаж — четыре года.|Оның жаттықтырушылық тәжірибесі — төрт жыл.
+Age 13 appears in two karate groups; confirm the right group with the academy.|Возраст 13 лет указан для двух групп карате; уточните подходящую группу в академии.|13 жас екі каратэ тобында көрсетілген; лайықты топты академиядан нақтылаңыз.
+Your request stays on this device. Contact the academy to confirm a place.|Ваша заявка остаётся на этом устройстве. Для подтверждения места свяжитесь с академией.|Өтініміңіз осы құрылғыда қалады. Орынды растау үшін академиямен байланысыңыз.
+(Opens in a new tab)|(откроется в новой вкладке)|(жаңа қойындыда ашылады)`.split("\n").forEach(row=>{const [en,ru,kk]=row.split("|");dictionary.set(en,[en,ru,kk]);});
+  `Some Uly Dala karate groups overlap in time. Ask the academy which group is right for you.|Некоторые группы карате на Улы Дала занимаются в пересекающееся время. Уточните подходящую группу в академии.|Ұлы Даладағы кейбір каратэ топтарының уақыты қабаттасады. Лайықты топты академиядан нақтылаңыз.
+Availability and locations can change.|Наличие мест и адреса занятий могут меняться.|Бос орындар мен сабақ мекенжайлары өзгеруі мүмкін.
+55 Uly Dala Avenue, Astana. The academy is on the basement floor; check the entrance on the map before visiting.|Проспект Улы Дала, 55, Астана. Академия находится на цокольном этаже; перед визитом проверьте вход на карте.|Ұлы Дала даңғылы, 55, Астана. Академия жертөле қабатында; барар алдында картадан кіреберісті тексеріңіз.
+The published schedule also lists Turan Avenue 19, Astana. Ask which branch your chosen group uses today. Confirm the time, available places, trial price and clothes or equipment needed before travelling.|В расписании также указан проспект Туран, 19, Астана. Перед поездкой уточните филиал, время, свободные места, цену и необходимую экипировку.|Кестеде Тұран даңғылы, 19, Астана да көрсетілген. Жолға шығар алдында филиалды, уақытты, бос орындарды, бағаны және қажетті жабдықты нақтылаңыз.
+This group does not match the age in Registration. Update Registration to choose it.|Группа не соответствует возрасту в регистрации. Измените возраст, чтобы выбрать её.|Топ тіркелуде көрсетілген жасқа сәйкес келмейді. Оны таңдау үшін жасты өзгертіңіз.
+Sport|Вид спорта|Спорт түрі`.split("\n").forEach(row=>{const [en,ru,kk]=row.split("|");dictionary.set(en,[en,ru,kk]);});
+  `Opening hours: Monday–Sunday, 09:00–22:30. Opening hours are not the same as class times: each sport has its own timetable.|Часы работы: понедельник–воскресенье, 09:00–22:30. Время занятий зависит от вида спорта.|Жұмыс уақыты: дүйсенбі–жексенбі, 09:00–22:30. Сабақ уақыты спорт түріне байланысты.
+Start with the address, then check the sport, age range and time. Some sports have both morning and evening groups. Saturday times can differ from weekday times. An age written with a plus sign means that age and older. Age 13 appears in two karate groups; confirm the right group with the academy.|Сначала проверьте адрес, вид спорта, возраст и время. У некоторых направлений есть утренние и вечерние группы; субботнее время может отличаться. Знак «+» означает «и старше». Возраст 13 лет указан для двух групп карате — уточните подходящую группу в академии.|Алдымен мекенжайды, спорт түрін, жасты және уақытты тексеріңіз. Кейбір бағыттарда таңғы және кешкі топтар бар; сенбідегі уақыт өзгеше болуы мүмкін. «+» белгісі «және одан үлкен» дегенді білдіреді. 13 жас екі каратэ тобында көрсетілген — лайықты топты академиядан нақтылаңыз.
+Availability and locations can change. Use the|Наличие мест и адреса занятий могут меняться. Используйте|Бос орындар мен сабақ мекенжайлары өзгеруі мүмкін.
+Sports at Salahuddin|Направления в Salahuddin|Salahuddin-дегі спорт түрлері
+The academy's posts list four sports: Kyokushinkai karate, taekwondo, judo and Muay Thai. The available groups depend on the branch and the student's age.|В академии есть киокушинкай карате, тхэквондо, дзюдо и муай-тай. Доступные группы зависят от филиала и возраста участника.|Академияда киокушинкай каратэ, таэквондо, дзюдо және муай-тай бар. Қолжетімді топтар филиал мен қатысушының жасына байланысты.
+Kyokushinkai karate|Киокушинкай карате|Киокушинкай каратэ
+The Uly Dala schedule includes groups from age four and a group for ages thirteen and older.|На Улы Дала есть группы с четырёх лет и группа для участников от тринадцати лет.|Ұлы Далада төрт жастан бастап топтар және он үш жастан асқандарға арналған топ бар.
+The Uly Dala poster lists groups for ages six to sixteen.|На Улы Дала есть группы для детей от шести до шестнадцати лет.|Ұлы Далада алтыдан он алты жасқа дейінгі балаларға арналған топтар бар.
+The Uly Dala poster lists weekday evening classes and a Saturday class for ages seven to sixteen.|На Улы Дала есть вечерние занятия в будни и субботняя группа для детей от семи до шестнадцати лет.|Ұлы Далада жұмыс күндері кешкі сабақтар және жетіден он алты жасқа дейінгілерге сенбілік топ бар.
+The Uly Dala posters show a children's group and a separate group for adults aged eighteen and older.|На Улы Дала есть детская группа и отдельная группа для взрослых от восемнадцати лет.|Ұлы Далада балалар тобы және он сегіз жастан асқан ересектерге арналған бөлек топ бар.
+for the exact days and times.|для точных дней и времени.|нақты күндер мен уақыт үшін.
+Before choosing a class, ask which group has spaces and whether beginners can join it. Also ask what clothes or equipment are needed for the first session. Confirm the trial price before visiting; the supplied posters do not give one.|Перед выбором занятия уточните наличие мест, условия для новичков, нужную одежду и экипировку. Узнайте стоимость первого занятия до посещения.|Сабақты таңдамас бұрын бос орындарды, жаңадан бастаушыларға арналған шарттарды, қажетті киім мен жабдықты нақтылаңыз. Алғашқы сабақтың бағасын барар алдында сұраңыз.`.split("\n").forEach(row=>{const [en,ru,kk]=row.split("|");dictionary.set(en,[en,ru,kk]);});
   const fragments = [
     ["Open favourite classes","Открыть избранные занятия","Таңдаулы сабақтарды ашу"],
     ['Kyokushin Karate','Киокушин карате','Киокушин каратэ'],['Taekwondo','Тхэквондо','Таэквондо'],['Muay Thai','Муай-тай','Муай-тай'],['Judo','Дзюдо','Дзюдо'],
@@ -288,14 +313,14 @@ Step 3 of 3: your practice request is ready. Nothing was sent. Contact the acade
   let language = 'en';
   try { const saved=localStorage.getItem('salahuddin-language'); if(['en','ru','kk'].includes(saved)) language=saved; } catch (_) {}
   const englishTitle = document.title;
-  const pageTitles = { 'index.html':['Home','Главная','Басты бет'], 'services.html':['Services','Направления и запись','Бағыттар және жазылу'], 'schedule.html':['Schedule','Расписание','Сабақ кестесі'], 'coaches.html':['Coaches','Тренеры','Жаттықтырушылар'], 'pricing.html':['Pricing','Цены','Бағалар'], 'contact.html':['Contact','Контакты','Байланыс'] };
+  const pageTitles = { 'index.html':['Home','Главная','Басты бет'], 'services.html':['Services','Услуги','Қызметтер'], 'schedule.html':['Schedule','Расписание','Сабақ кестесі'], 'coaches.html':['Coaches','Тренеры','Жаттықтырушылар'], 'pricing.html':['Pricing','Цены','Бағалар'], 'contact.html':['Contact','Контакты','Байланыс'] };
   const originals = new WeakMap();
   const attributes = new WeakMap();
   const bar=document.createElement('div');
-  bar.id='language-switcher';bar.className='position-fixed bottom-0 start-0 m-2 p-2 bg-white border rounded-3 shadow d-flex gap-1';
+  bar.id='language-switcher';bar.className='p-2 bg-white border rounded-3 shadow d-flex gap-1';
   bar.style.zIndex='1050';bar.setAttribute('role','group');bar.setAttribute('aria-label','Language / Язык / Тіл');
   for(const [code,label] of [['en','English'],['ru','Русский'],['kk','Қазақша']]) {
-    const button=document.createElement('button');button.type='button';button.className='btn btn-sm btn-outline-dark';button.textContent=label;button.lang=code;
+    const button=document.createElement('button');button.type='button';button.className='btn btn-outline-dark';button.textContent=label;button.lang=code;
     button.dataset.language=code;button.addEventListener('click',()=>{language=code;try{localStorage.setItem('salahuddin-language',code)}catch(_){};refresh();});bar.append(button);
   }
   document.body.append(bar);

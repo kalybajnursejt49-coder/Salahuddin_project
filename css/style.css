@@ -17,3 +17,17 @@ legend { float: none; width: auto; padding: 0 .25rem; }
 .is-error { border-color: #b02a37 !important; }
 .is-success { border-color: #146c43 !important; }
 .form-message { min-height: 3rem; padding: .75rem; border: 1px solid #d8dbd3; border-radius: .25rem; }
+
+/* The skip link, focus ring and control size repair keyboard and touch access. */
+.skip-link { position: absolute; top: -5rem; left: 1rem; z-index: 1100; padding: .75rem 1rem; background: #fff; color: #242824; }
+.skip-link:focus { top: 1rem; }
+.btn { min-height: 44px; }
+.back-to-top { position: fixed; right: 1rem; bottom: 1rem; z-index: 1020; background: #fff; }
+#language-switcher { position: fixed; left: 1rem; bottom: 1rem; z-index: 1030; }
+#language-switcher .btn { min-width: 44px; }
+.text-muted, .text-secondary, figcaption { color: #49534c !important; }
+a { color: #6a5316; }
+@media (max-width: 575.98px) { .back-to-top { bottom: 5rem; } #language-switcher { max-width: calc(100vw - 2rem); } }
+
+.poster-thumb { width: 180px; max-width: 100%; height: auto; }
+.poster img { width: 270px; max-width: 100%; height: auto; }

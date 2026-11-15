@@ -78,7 +78,7 @@ function createReview(item) {
   const author = element('h3','h5',item.name); author.translate = false; body.append(author);
   body.append(element('p','small text-muted',`${item.rating}/5 · ${new Date(item.date).toLocaleString()}`));
   const content = element('p','',item.text); content.translate = false; body.append(content);
-  const remove = element('button','btn btn-sm btn-outline-danger','Remove');
+  const remove = element('button','btn btn-outline-danger','Remove');
   remove.type = 'button';
   remove.addEventListener('click',() => {
     reviews = reviews.filter(review => review.id !== item.id);

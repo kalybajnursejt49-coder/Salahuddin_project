@@ -1,78 +1,28 @@
-# Salahuddin Academy
+# Salahuddin Martial Arts Academy
 
-Six-page front-end site for Salahuddin Martial Arts Academy in Astana. Open `index.html` in a browser. Bootstrap 5.3.3 is loaded from its CDN, so an internet connection is needed for the intended layout and mobile navigation.
+Six-page front-end site for a martial arts academy in Astana: Home, Services, Coaches, Schedule, Pricing and Contact. Open index.html in a browser with internet access for Bootstrap 5.3.3 and jQuery 3.7.1.
 
-The JavaScript starts from the local midterm archive. Most HTML changes add deferred script links; the home page also changes existing Bootstrap classes and image details. `css/style.css` is unchanged. New controls, results, group rows and review cards are created with DOM methods.
+## Visitor flow
 
-## Pages and visitor journeys
+1. Find a group on Schedule by sport, branch, age, day and time.
+2. Open Services from the selected group, complete local Registration and choose a class date.
+3. Review the practice request and contact the academy to confirm a real place.
 
-- Home: read about the academy, follow links to classes, coaches, schedule, prices and contact details, and open questions about locations, the trial form and the age of the timetable.
-- Services: filter published groups by sport, branch, age, day and time of day, then select a group in the trial form and submit a checked demonstration request.
-- Schedule: choose a day to see all matching classes from earliest to latest, filter by sport, branch, age and time of day, and see a result count and empty state.
-- Coaches: search the published coach profiles and add or remove practice reviews stored only in this browser.
-- Pricing: current prices were not confirmed in the supplied materials. Contact the academy for a current fee; the site does not calculate or collect payment.
-- Contact: use the existing phone, email and map links to confirm a real visit.
+Registration, favourites and reviews stay in this browser. The request form does not send data or make a booking. For a child, the Services form requires a parent or guardian name. Dates are checked against the selected group's days; the group must fit the registered age. Published times, availability and contact details should be confirmed with the academy before visiting.
 
-The published group data comes from the September 2025 timetable already present in the midterm pages. Current capacity, fees, coach assignments and times need confirmation from the academy. A successful form creates only a demonstration reference. It sends nothing to a server and creates no booking. Reviews are also demonstrations, not verified academy testimonials.
+Pricing displays indicative amounts and a budget calculator. These amounts are not a confirmed academy price list; no payment is taken here.
 
-The header has a local profile and a selected-classes list. The profile stores a name, phone, age and optional preferred sport in this browser; it is not registration or authentication. The visitor can clear these details. Selected classes are also stored in this browser and can be removed. Neither feature contacts the academy or reserves a place.
+## Code and assets
 
-## Functionality Plan
+- js/main.js: shared group data, local Registration, favourites, guides and budget calculator
+- js/jquery-assignment.js: group finder, schedule rows, coach search and class request
+- js/reviews.js: local practice reviews
+- js/language.js: English, Russian and Kazakh interface text
+- css/style.css: site styles and accessibility fixes
+- images/: six optimized WebP assets with intrinsic dimensions
 
-| Page | Visitor goal | Planned function | Expected result | Responsible student |
-|---|---|---|---|---|
-| Services | Find an age-appropriate group | Filter by sport, branch and age | Matching cards, count, empty message and reset | Nurseyit Kalybai |
-| Services | Ask about a trial | Check the form and compare age, sport, branch and date with the group | Field errors or a clear demonstration request summary | Nurseyit Kalybai |
-| Schedule | Compare published times | Filter group rows by sport, branch and age | Matching rows, count, reset and contact link when empty | Tuleubayev Damir |
-| Coaches | Find a coach | Search profiles by name or sport | Matching profiles, count, empty message and reset | Tuleubayev Damir |
-| Coaches | Share practice feedback | Check the review form and create or remove cards | A dated demonstration review or field errors | Tuleubayev Damir |
-| All pages | Use consistent group data | Share group data and rendering functions in `main.js` | The same group details on Services, Schedule and forms | Both students |
+Course checklists, evidence notes and the AI log are in docs/.
 
-These are implementation areas from the earlier project division. Commit authorship and individual contribution must be confirmed in the real Git repository before submission.
+## Quality checks
 
-## Files
-
-- `js/main.js`: shared data and reusable functions
-- `js/groups.js`: group finder and schedule rows
-- `js/forms.js`: trial and group request validation
-- `js/reviews.js`: demonstration review flow
-- `javascript-checklist.md`: exact files and line references
-- `evidence.md`: checks performed and remaining external checks
-- `ai-log.md`: student-maintained AI log
-
-## Submission status
-
-This version starts from the repository's `midterm` tag (`6a1abb6`). The Assignment 4–5 work is on `master` and remains on the `assignment-4-5` branch; the `midterm` tag stays unchanged. The required multi-day student commits cannot be produced retroactively.
-
-## AI use
-
-## Assignment 6 jQuery
-
-Services and Schedule use jQuery for group filtering, dynamic cards with visible times and a delegated button that selects a group in the request form, and the request form. Coaches uses jQuery for live search. The former plain-JavaScript versions of those three features are in js/old-js-version.js and are not loaded by any page. js/jquery-assignment.js contains the jQuery code and loads after jQuery 3.7.1 from its CDN. The review feature remains in js/reviews.js.
-
-Form validation shows an error beside each invalid field, checks trimmed name, email, phone, age, group, date and consent, and shows a demonstration success message before resetting. Nothing is submitted to a server. Browser-side checks do not replace server validation for a real service.
-
-The group selection button is delegated to the card list because those buttons are created by the filter. It fills the sport, branch and group in the request form and scrolls there. The form error fade-out, form status fade-in and scroll animation are functional effects. No new CSS rules or hand-written HTML elements were added. CDN access is needed for jQuery.
-
-## Added for the endterm
-
-- Home uses plain JavaScript in `js/main.js` to build three expandable questions from facts already stated on the site. The home panels now use the same Bootstrap card classes as the other pages; only classes and existing image details changed in HTML.
-- Services and Schedule extend the earlier jQuery group finder with day-of-week and time-of-day filters. Schedule also builds a selected-day overview ordered by start time across both branches. Reset clears the new filters as well.
-- Visitors can save published groups from Services or Schedule and review or remove them from the header on any page. The local profile in the header keeps visitor details on this device without creating an account. The form now shows sport, branch, group time, age and preferred date together before submission, with a button that returns to the choices.
-- The local profile now also asks for a phone number and age. Both it and the trial forms accept names with letters and common name separators, require exactly ten national phone digits after the optional `+7`, and reject ages above 99.
-
-## Visitor flow update
-
-Schedule is the class finder. Its sign-up links carry the selected group to the only registration form, on Services. Services explains the four sports and the steps to join. Registration stores details on the device only. Pricing shows explicitly estimated plans and a budget calculator, using linked Astana club examples checked on 10 November 2026. Contact adds call, WhatsApp and map actions plus a first-visit checklist.
-
-## Languages
-
-The bottom-left language control switches between English, Russian and Kazakh. `js/language.js` translates static and dynamically generated text, validation and accessible labels, preserves entered form values and saves the language on this device. User-written reviews are not translated. Original poster images remain unchanged.
-
-## Registration details and class requests
-
-Registration is the single place for name, email, phone and age. The Services form displays those details with an edit button, validates the profile before accepting a demonstration request, and filters groups using the saved age. There is no preferred-date field. Updating or clearing the profile immediately updates the request form. Older profiles must add an email before submitting.
-
-## Favourites and guided journey
-
-Favourites are explicitly separate from requests; selecting a group no longer automatically saves it. Schedule can match the registration age and preferred sport, resetting other filters and explaining the result. Missing registration can be completed before matching continues. Home, Schedule and Services now explain the start, selection and final confirmation steps. Successful demonstration requests retain their summary and link to Contact; editing the request clears the previous result. All new labels have English, Russian and Kazakh translations.
+Check all six pages in two browsers and on a phone. In each language, inspect the menu, buttons, forms, validation messages, group cards and footer. Use keyboard Tab/Enter/Escape, check console errors, run the W3C HTML validator and confirm image sizes in Network. See docs/evidence.md for earlier notes. JavaScript syntax and static links can also be checked locally.

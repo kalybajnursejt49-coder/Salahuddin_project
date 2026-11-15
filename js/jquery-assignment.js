@@ -2,7 +2,6 @@
 $(function () {
   'use strict';
 
-  $('#group-form').closest('section').remove();
   const $form = $('#trial-form');
   const $service = $('#enrollment-section');
   const $schedule = $('#uly-dala');
@@ -56,7 +55,7 @@ $(function () {
     function saveClassButton(group, extraClasses) {
       const saved = window.salahuddinSavedGroups.has(group.id);
       return $('<button>').attr({type:'button','data-group-id':group.id})
-        .addClass('btn btn-sm btn-outline-secondary save-group ' + extraClasses)
+        .addClass('btn btn-outline-secondary save-group ' + extraClasses)
         .text(saved ? 'In favourites' : 'Add to favourites').prop('disabled',saved);
     }
     function matches(group) {
@@ -166,9 +165,6 @@ $(function () {
       const group = groups.find(item => item.id === groupId);
       if (!group) return;
 
-      if ($age.val()) {
-        $form.find('#applicant-age').val($age.val()).trigger('input');
-      }
       $form.find('[name="sport_direction"][value="' + group.sport + '"]').prop('checked', true).trigger('change');
       $form.find('#branch-location').val(group.branch).trigger('change');
 
@@ -177,12 +173,12 @@ $(function () {
       if (available) {
         $choice.val(String(group.id)).trigger('change');
       } else {
-        $form.find('#chosen-group-error').text('This group does not match the age in the form. Update the age to choose it.');
+        $form.find('#chosen-group-error').text('This group does not match the age in Registration. Update Registration to choose it.');
       }
       // Scrolling to the relevant form field makes the chosen card useful immediately.
       $('html, body').animate({scrollTop: Math.max(0, $form.offset().top - 20)}, 300, function () {
         if (available) $choice.trigger('focus');
-        else $form.find('#applicant-age').trigger('focus');
+        else $form.find('#chosen-group').trigger('focus');
       });
     });
     renderGroups();
@@ -219,7 +215,6 @@ $(function () {
   if ($form.length) {
     const $result = $form.find('.form-message').first();
     $form.find('.form-note').first().text('Your details come from Registration. This practice request is not sent to the academy. Call to confirm your visit.');
-    $form.find('#applicant-name').closest('fieldset').remove();
     const $profileBox = $('<div>').addClass('border rounded-3 p-3 mb-3').prependTo($form);
     const $profileStatus = $('<p>').attr('aria-live','polite').appendTo($profileBox);
     const $editProfile = $('<button>').attr('type','button').addClass('btn btn-outline-dark').text('Registration / edit details').appendTo($profileBox);
@@ -239,9 +234,6 @@ $(function () {
     $('<p>').addClass('form-note').text('Step 2 of 3: check your group and registration details, then check the request.').insertBefore($profileBox);
     $form.find('[id^="submit-"]').prop('type','submit');
     $form.prop('noValidate', true);
-    $form.find('#applicant-age').attr('max',99);
-    $form.find('#applicant-name').attr('maxlength',50);
-    $form.find('#applicant-phone').attr('maxlength',20);
     let $branch = $form.find('#branch-location');
     if (!$branch.length) {
       $branch = $('<select>').attr({id:'branch-location',name:'branch',required:true}).addClass('form-select');
@@ -253,7 +245,7 @@ $(function () {
     const $groupBox = $('<p>').append($('<label>').attr('for','chosen-group').text('Published group: '), $group);
     $groupBox.insertAfter($branch.parent());
     const $summary = $('<div>').addClass('form-message').attr('aria-live','polite').insertAfter($groupBox);
-    const $fields = $form.find('#branch-location, #experience-level, #safety-rules').add($group);
+    const $fields = $form.find('#branch-location, #experience-level, #safety-rules, #preferred-date, #guardian-name').add($group);
     $fields.each(function () {
       const $field = $(this);
       const id = $field.attr('id') + '-error';
@@ -263,15 +255,12 @@ $(function () {
     function clearError($field) {
       $field.removeClass('is-error').removeAttr('aria-invalid').siblings('#' + $field.attr('id') + '-error').text('');
     }
-    $form.on('input', '#applicant-name', function () { this.value = cleanPersonName(this.value); });
-    $form.on('input', '#applicant-phone', function () { this.value = cleanPhone(this.value); });
     // This chain removes the error class and ARIA flag, finds the sibling message,
     // then clears its text.
     $form.on('input change', 'input, select, textarea', function () {
       const $field = $(this);
       clearError($field);
       if ($result.hasClass('is-success')) $result.stop(true,true).empty().addClass('is-hidden').removeClass('is-success');
-      if ($field.is('#applicant-age')) $form.find('#chosen-group-error').text('');
       if ($result.hasClass('is-error')) $result.fadeOut(150, function () { $result.addClass('is-hidden').removeClass('is-error').show(); });
     });
     function chosenSport() { return $form.find('[name="sport_direction"]:checked').val(); }
@@ -291,10 +280,11 @@ $(function () {
         'Branch: ' + branchNames[group.branch],
         'Class: ' + group.days.map(day => dayNames[day]).join(' / ') + ' · ' + group.time,
         'Group age range: ' + group.min + '–' + (group.max === 100 ? 'adult' : group.max),
-        'Student age: ' + (age || 'not entered')
+        'Student age: ' + (age || 'not entered'),
+        'Preferred date: ' + ($form.find('#preferred-date').val() || 'not selected')
       ].forEach(detail => $('<li>').text(detail).appendTo($details));
       $summary.append($('<strong>').text('Review your selected class'),$details);
-      $('<button>').attr('type','button').addClass('btn btn-sm btn-outline-secondary change-choice').text('Change choices').appendTo($summary);
+      $('<button>').attr('type','button').addClass('btn btn-outline-secondary change-choice').text('Change choices').appendTo($summary);
       $summary.append($('<p>').addClass('small mb-0 mt-2').text('This is a demonstration. No place is reserved.'));
     }
     function updateChoices() {
@@ -313,7 +303,7 @@ $(function () {
       updateSummary();
     }
     $form.on('input change', '#branch-location, [name="sport_direction"]', updateChoices);
-    $form.on('change', '#chosen-group', updateSummary);
+    $form.on('change', '#chosen-group, #preferred-date', updateSummary);
     $summary.on('click', '.change-choice', function () {
       const $sportChoice = $form.find('[name="sport_direction"]:checked');
       $('html, body').animate({scrollTop: Math.max(0, $sportChoice.offset().top - 20)}, 250, function () {
@@ -321,6 +311,17 @@ $(function () {
       });
     });
     updateChoices();
+    const $guardian = $form.find('#guardian-name');
+    function updateGuardian() {
+      const age = Number(window.salahuddinProfile.get().age);
+      const required = age > 0 && age < 18;
+      $guardian.prop('required', required).closest('.guardian-field').toggleClass('is-hidden', !required);
+      if (!required) $guardian.val('');
+    }
+    updateGuardian();
+    const dateInput = $form.find('#preferred-date')[0];
+    const now = new Date();
+    dateInput.min = [now.getFullYear(), String(now.getMonth() + 1).padStart(2,'0'), String(now.getDate()).padStart(2,'0')].join('-');
     const requestedGroup = groups.find(item => item.id === Number(new URLSearchParams(window.location.search).get('group')));
     if (requestedGroup) {
       $form.find('[name="sport_direction"][value="' + requestedGroup.sport + '"]').prop('checked',true);
@@ -331,6 +332,7 @@ $(function () {
     window.addEventListener('salahuddin:profile-change',()=>{
       renderProfile();
       updateChoices();
+      updateGuardian();
       clearError($group);
       $result.empty().addClass('is-hidden');
     });
@@ -355,6 +357,12 @@ $(function () {
       }
       const {name,age} = window.salahuddinProfile.get();
       const group = chosenGroup();
+      const dateText = $form.find('#preferred-date').val();
+      const selectedDay = dateText ? new Date(dateText + 'T12:00:00').getDay() : -1;
+      const today = new Date(); today.setHours(0,0,0,0);
+      const selectedDate = dateText ? new Date(dateText + 'T12:00:00') : null;
+      check('#preferred-date', !!group && !!selectedDate && selectedDate >= today && group.days.includes(selectedDay), 'Choose a future date on a day when this group meets.');
+      check('#guardian-name', age >= 18 || validPersonName($form.find('#guardian-name').val() || ''), 'Enter a parent or guardian name for a child.');
       check('#branch-location', !!$branch.val(), 'Choose a branch.');
       if ($form.find('#experience-level').length) check('#experience-level', !!$form.find('#experience-level').val(), 'Choose an experience level.');
       check('#chosen-group', !!group && suitable(group,age) && group.sport === chosenSport() && group.branch === $branch.val(), 'Choose a matching published group.');
@@ -365,7 +373,7 @@ $(function () {
         $first.trigger('focus');
         return;
       }
-      $result.addClass('is-success').text('Demo request for ' + name + ': ' + groupLabel(group) + '. No data was sent or booking created.').fadeIn(200);
+      $result.addClass('is-success').text('Demo request for ' + name + ': ' + groupLabel(group) + ' · ' + dateText + '. No data was sent or booking created.').fadeIn(200);
       $result.append($('<p>').addClass('mt-2').text('Step 3 of 3: your practice request is ready. Nothing was sent. Contact the academy to confirm a real visit.'));
       $result.append($('<a>').attr('href','contact.html#contacts').addClass('btn btn-dark mt-2').text('Contact the academy'));
       $result.attr('tabindex','-1').trigger('focus');
