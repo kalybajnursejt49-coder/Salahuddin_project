@@ -289,7 +289,12 @@ The academy's posts list four sports: Kyokushinkai karate, taekwondo, judo and M
 Kyokushinkai karate|Киокушинкай карате|Киокушинкай каратэ
 for the exact days and times.|для точных дней и времени.|нақты күндер мен уақыт үшін.
   `.split("\n").forEach(row=>{const [en,ru,kk]=row.split("|");dictionary.set(en,[en,ru,kk]);});
-  `Explore the sports, coaches and classes on the pages below.|Ниже можно узнать о видах спорта, тренерах и занятиях.|Төменде спорт түрлері, жаттықтырушылар және сабақтар туралы біле аласыз.
+  `The guide below shows what you can find on each page.|Ниже кратко описано, что есть на каждой странице.|Төменде әр бетте не бар екені қысқаша жазылған.
+— explore the sports and prepare a class request.|— виды спорта и заявка на занятие.|— спорт түрлері және сабаққа өтінім.
+— meet the people who teach the classes.|— знакомство с преподавателями занятий.|— сабақ өткізетін жаттықтырушылармен танысу.
+— compare groups by day, time and age.|— сравнение групп по дням, времени и возрасту.|— топтарды күн, уақыт және жас бойынша салыстыру.
+— see indicative prices and plan your budget.|— ориентировочные цены для планирования бюджета.|— бюджетті жоспарлауға арналған болжалды бағалар.
+— find addresses, opening hours and ways to get in touch.|— адреса, часы работы и способы связи.|— мекенжайлар, жұмыс уақыты және байланысу жолдары.
 Judo training at the academy.|Занятия дзюдо в академии.|Академиядағы дзюдо сабақтары.
 Choose a sport and see the|Выберите вид спорта и посмотрите|Спорт түрін таңдап, қараңыз
 for groups, ages and training times.|группы, возраст и время занятий.|топтарды, жасты және сабақ уақытын.
