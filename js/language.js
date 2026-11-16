@@ -2,7 +2,7 @@
 
 (() => {
   const rows = `Home|Главная|Басты бет
-Explore the academy|Познакомьтесь с академией|Академиямен танысыңыз
+What you can find on each page|Что есть на каждой странице|Әр бетте не бар
 is a martial arts academy in Astana.|— академия единоборств в Астане.|— Астанадағы жекпе-жек академиясы.
 You do not need to decide everything at once. Choose the information you need now, then return here whenever you want to explore another page.|Не нужно решать всё сразу. Выберите нужную сейчас информацию и вернитесь сюда, когда захотите посмотреть другую страницу.|Бәрін бірден шешудің қажеті жоқ. Қазір керек ақпаратты таңдап, басқа бетті қарағыңыз келгенде осында қайта оралыңыз.
 Plan the practical details:|Подготовьте детали посещения:|Бару мәліметтерін жоспарлаңыз:

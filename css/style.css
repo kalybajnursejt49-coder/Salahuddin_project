@@ -39,3 +39,4 @@ main .btn, header .btn { font-size: 1.125rem; }
 /* The existing Home panels needed clearer separation and more readable links. */
 #about-club { border-left: 4px solid #80651f !important; }
 #home-explore-links > li + li { margin-top: .65rem; }
+#home-explore-links a { font-weight: 700; }
