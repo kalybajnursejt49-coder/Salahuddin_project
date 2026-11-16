@@ -31,3 +31,7 @@ a { color: #6a5316; }
 
 .poster-thumb { width: 180px; max-width: 100%; height: auto; }
 .poster img { width: 270px; max-width: 100%; height: auto; }
+
+/* Larger reading and touch targets address the endterm usability concern. */
+main, .navbar .nav-link { font-size: 1.125rem; }
+main .btn, header .btn { font-size: 1.125rem; }

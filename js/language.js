@@ -2,6 +2,8 @@
 
 (() => {
   const rows = `Home|Главная|Басты бет
+Explore the academy|Познакомьтесь с академией|Академиямен танысыңыз
+is a martial arts academy in Astana.|— академия единоборств в Астане.|— Астанадағы жекпе-жек академиясы.
 Services|Услуги|Қызметтер
 Coaches|Тренеры|Жаттықтырушылар
 Schedule|Расписание|Сабақ кестесі
@@ -37,7 +39,6 @@ Selected for this visit only. Browser storage is unavailable.|Выбор сох�
 Sign up|Записаться|Жазылу
 Sign up for this class|Записаться на это занятие|Осы сабаққа жазылу
 Find a suitable group|Найти подходящую группу|Қолайлы топты табу
-Published September 2025 times. Confirm current availability with the academy.|Расписание опубликовано в сентябре 2025 года. Уточните время и свободные места в академии.|Кесте 2025 жылғы қыркүйекте жарияланған. Уақыт пен бос орындарды академиядан нақтылаңыз.
 Sports|Виды спорта|Спорт түрлері
 Branches|Филиалы|Филиалдар
 Days|Дни недели|Апта күндері
@@ -60,7 +61,6 @@ Practise kicking techniques, balance and coordination.|Техника ударо
 Learn throws and grappling techniques on a mat.|Изучение бросков и борьбы на татами.|Татамиде лақтыру мен күрес тәсілдерін үйрену.
 Practise striking techniques using punches, kicks, knees and elbows.|Техника ударов руками, ногами, коленями и локтями.|Қолмен, аяқпен, тіземен және шынтақпен соғу техникасы.
 See class times|Посмотреть расписание|Сабақ уақытын көру
-How to join a class|Как записаться на занятие|Сабаққа қалай жазылуға болады
 Open Schedule to find a class for your age and a convenient time.|Откройте «Расписание» и выберите группу по возрасту и удобному времени.|«Сабақ кестесін» ашып, жасыңызға және ыңғайлы уақытқа сай топ таңдаңыз.
 Choose “Sign up for this class”. Your choice will appear in the form here.|Нажмите «Записаться на это занятие». Выбранная группа появится в форме.|«Осы сабаққа жазылу» түймесін басыңыз. Таңдалған топ осы нысанда көрсетіледі.
 Fill in your details and check the summary. For a child, a parent or guardian should help.|Введите данные и проверьте свой выбор. Ребёнку должен помочь родитель или опекун.|Деректерді енгізіп, таңдауыңызды тексеріңіз. Балаға ата-анасы немесе қамқоршысы көмектесуі керек.
@@ -123,7 +123,6 @@ What happens if I miss a class?|Что будет, если я пропущу з
 Are equipment or uniform costs separate?|Нужно ли отдельно платить за экипировку и форму?|Жабдық пен киімге бөлек төлеу керек пе?
 Which payment methods are accepted?|Какие способы оплаты доступны?|Қандай төлем тәсілдері бар?
 Compare class times|Сравнить время занятий|Сабақ уақыттарын салыстыру
-Contact us in three easy steps|Как связаться с нами: три шага|Бізбен байланысудың үш қадамы
 Have the sport, student age, class time and branch ready.|Подготовьте название спорта, возраст участника, время занятия и филиал.|Спорт түрін, қатысушының жасын, сабақ уақытын және филиалды дайындап қойыңыз.
 Call or send a WhatsApp message to ask about available places and the current price.|Позвоните или напишите в WhatsApp, чтобы узнать о свободных местах и цене.|Бос орындар мен қазіргі бағаны білу үшін қоңырау шалыңыз немесе WhatsApp-қа жазыңыз.
 Confirm the address, entrance and what to bring before travelling.|Перед поездкой уточните адрес, вход и что взять с собой.|Жолға шығар алдында мекенжайды, кіреберісті және не әкелу керегін нақтылаңыз.
@@ -134,7 +133,6 @@ Uly Dala 55: basement floor. Turan 19 appears in the published timetable; confir
 What should I ask before my first visit?|Что спросить перед первым посещением?|Алғашқы бару алдында не сұрау керек?
 Ask whether the group accepts beginners of your age, whether a parent should attend, what clothing or equipment is required, and how payment and missed classes work.|Уточните, принимают ли новичков вашего возраста, нужен ли родитель, какую одежду и экипировку взять, как оплачивать и что делать при пропусках.|Топқа сіздің жасыңыздағы бастаушыларды қабылдай ма, ата-ана қатысуы керек пе, қандай киім мен жабдық қажет, төлем мен өткізіп алған сабақтар қалай есептелетінін сұраңыз.
 Uly Dala branch|Филиал на Улы Дала|Ұлы Даладағы филиал
-Plan your visit|Спланируйте посещение|Бару жоспарын жасаңыз
 Academy Instagram|Instagram академии|Академияның Instagram парақшасы
 Address and entrance on 2GIS|Адрес и вход на 2GIS|2GIS-тегі мекенжай мен кіреберіс
 About the academy|Об академии|Академия туралы
@@ -144,7 +142,6 @@ Sports and a class registration form|Направления и форма зап
 Coach profiles|О тренерах|Жаттықтырушылар туралы
 Plan a visit:|Спланируйте посещение:|Баруды жоспарлаңыз:
 Groups, ages and times|Группы, возраст и время|Топтар, жас және уақыт
-Before your first visit|Перед первым посещением|Алғашқы бару алдында
 Choose the sport you want to try.|Выберите интересующий вид спорта.|Қызықтыратын спорт түрін таңдаңыз.
 Find a group for your age and a suitable time.|Найдите группу по возрасту и удобному времени.|Жасыңызға және ыңғайлы уақытқа сай топ табыңыз.
 Ask the academy about available places, the price and what to bring.|Уточните свободные места, цену и что взять с собой.|Бос орындарды, бағаны және не әкелу керегін нақтылаңыз.
@@ -154,7 +151,6 @@ The published groups meet at Uly Dala 55 or Turan 19. Check the branch listed fo
 Does the registration form book a place?|Форма записи бронирует место?|Жазылу нысаны орын брондай ма?
 No. The form is a front-end demonstration. It does not send your details or reserve a place.|Нет. Это учебная форма: она не отправляет данные и не бронирует место.|Жоқ. Бұл оқу нысаны: ол деректерді жібермейді және орын брондамайды.
 Is the timetable current?|Расписание актуально?|Кесте өзекті ме?
-The group times come from academy posts published in September 2025. They may have changed, so confirm the current timetable with the academy.|Время взято из публикаций академии за сентябрь 2025 года. Оно могло измениться — уточните расписание в академии.|Уақыт академияның 2025 жылғы қыркүйектегі жарияланымдарынан алынған. Ол өзгеруі мүмкін — кестені академиядан нақтылаңыз.
 Find a coach by name or sport|Найти тренера по имени или виду спорта|Жаттықтырушыны аты немесе спорт түрі бойынша табу
 Clear search|Очистить поиск|Іздеуді тазарту
 No coaches match. Try another word.|Тренеры не найдены. Попробуйте другое слово.|Жаттықтырушылар табылмады. Басқа сөзді қолданып көріңіз.
@@ -189,13 +185,7 @@ Email:|Почта:|Пошта:
 © 2026 Salahuddin Martial Arts Academy. All rights reserved.|© 2026 Академия единоборств Salahuddin. Все права защищены.|© 2026 Salahuddin жекпе-жек академиясы. Барлық құқықтар қорғалған.`;
   const dictionary = new Map(rows.split('\n').map(row => {const [en,ru,kk]=row.split('|');return [en,[en,ru,kk]];}));
   const extraRows = `is a martial arts academy in Astana. Its published schedules include Kyokushinkai karate, taekwondo, judo and Muay Thai. There are groups for different ages, including children and adults.|— академия единоборств в Астане. В расписании есть киокушинкай карате, тхэквондо, дзюдо и муай-тай. Есть группы для детей и взрослых разных возрастов.|— Астанадағы жекпе-жек академиясы. Кестеде киокушинкай каратэ, таэквондо, дзюдо және муай-тай бар. Балалар мен ересектерге арналған әртүрлі жас топтары бар.
-This site brings together coach profiles, class times and information for a first visit. The academy's posts show classes at Uly Dala 55 and Turan 19. Check the address for your group because the timetables are different.|На сайте собраны сведения о тренерах, расписание и информация для первого посещения. В публикациях академии указаны Улы Дала, 55 и Туран, 19. Проверьте адрес своей группы: расписания филиалов различаются.|Сайтта жаттықтырушылар, сабақ уақыты және алғашқы бару туралы ақпарат жиналған. Академия жарияланымдарында Ұлы Дала, 55 және Тұран, 19 көрсетілген. Тобыңыздың мекенжайын тексеріңіз: филиалдардың кестелері әртүрлі.
-Judo schedule from the academy's September 2025 posts.|Расписание дзюдо из публикаций академии за сентябрь 2025 года.|Академияның 2025 жылғы қыркүйектегі жарияланымдарынан алынған дзюдо кестесі.
-The schedules on this site come from posts published in 2025. They are useful for comparing the groups, but times may have changed. Confirm your visit with the academy first.|Расписание взято из публикаций 2025 года. Оно помогает сравнить группы, но время могло измениться. Перед посещением свяжитесь с академией.|Кесте 2025 жылғы жарияланымдардан алынған. Ол топтарды салыстыруға көмектеседі, бірақ уақыт өзгеруі мүмкін. Барар алдында академиямен байланысыңыз.
 Your details were not sent or saved. Please contact the academy to confirm your request.|Данные не отправлены и не сохранены. Свяжитесь с академией для подтверждения записи.|Деректер жіберілмеді және сақталмады. Жазылуды растау үшін академиямен байланысыңыз.
-The tables show the times published by the academy in September 2025. Ask the academy to confirm the current group before visiting.|В таблицах указано время из публикаций академии за сентябрь 2025 года. Перед визитом уточните актуальное расписание группы.|Кестелерде академияның 2025 жылғы қыркүйекте жариялаған уақыттары берілген. Барар алдында топтың қазіргі кестесін нақтылаңыз.
-Uly Dala 55 — published September 2025|Улы Дала, 55 — опубликовано в сентябре 2025 года|Ұлы Дала, 55 — 2025 жылғы қыркүйекте жарияланған
-Turan 19 — published September 2025|Туран, 19 — опубликовано в сентябре 2025 года|Тұран, 19 — 2025 жылғы қыркүйекте жарияланған
 Age (years)|Возраст (лет)|Жасы (жыл)
 Start with the address, then check the sport, age range and time. Some sports have both morning and evening groups. Saturday times can differ from weekday times. An age written with a plus sign means that age and older.|Сначала выберите адрес, затем вид спорта, возраст и время. Есть утренние и вечерние группы. В субботу время может отличаться. Знак «+» после возраста означает «и старше».|Алдымен мекенжайды, содан кейін спорт түрін, жасты және уақытты таңдаңыз. Таңғы және кешкі топтар бар. Сенбідегі уақыт өзгеше болуы мүмкін. Жастан кейінгі «+» белгісі «және одан үлкен» дегенді білдіреді.
 contact page|страницу контактов|байланыс беті
@@ -253,8 +243,6 @@ Start here|Начните здесь|Осы жерден бастаңыз
 1. Choose a group on Schedule. Favourites are optional: they keep classes for later.|1. Найдите группу в расписании. При желании сохраните её в избранное для сравнения.|1. Кестеден топ табыңыз. Қаласаңыз, кейін салыстыру үшін таңдаулыларға сақтаңыз.
 2. Select Sign up for this class, complete Registration and check your request.|2. Нажмите «Записаться на это занятие», заполните регистрацию и проверьте заявку.|2. «Осы сабаққа жазылу» түймесін басып, тіркелуді толтырыңыз және өтінімді тексеріңіз.
 3. Review the result, then contact the academy to confirm a real visit.|3. Посмотрите результат и свяжитесь с академией для подтверждения реального посещения.|3. Нәтижені қарап, нақты келуді растау үшін академиямен байланысыңыз.
-Step 1 of 3: choose a group. Sign up opens the request form; favourites only keep a class for later.|Шаг 1 из 3: выберите группу. «Записаться» открывает заявку, а «В избранное» сохраняет занятие для сравнения.|3 қадамның 1-қадамы: топ таңдаңыз. «Жазылу» өтінімді ашады, ал «Таңдаулыларға қосу» сабақты кейінге сақтайды.
-Step 2 of 3: check your group and registration details, then check the request.|Шаг 2 из 3: проверьте группу и данные регистрации, затем нажмите «Проверить заявку».|3 қадамның 2-қадамы: топ пен тіркелу деректерін тексеріп, «Өтінімді тексеру» түймесін басыңыз.
 Step 3 of 3: your practice request is ready. Nothing was sent. Contact the academy to confirm a real visit.|Шаг 3 из 3: учебная заявка готова. Она никуда не отправлена. Свяжитесь с академией, чтобы подтвердить реальное посещение.|3 қадамның 3-қадамы: оқу өтінімі дайын. Ол ешқайда жіберілген жоқ. Нақты келуді растау үшін академиямен байланысыңыз.`.split("\n").forEach(row=>{const [en,ru,kk]=row.split("|");dictionary.set(en,[en,ru,kk]);});
   `Skip to content|Перейти к содержимому|Мазмұнға өту
 Student name|Имя участника|Қатысушының аты
@@ -295,12 +283,54 @@ Availability and locations can change. Use the|Наличие мест и адр
 Sports at Salahuddin|Направления в Salahuddin|Salahuddin-дегі спорт түрлері
 The academy's posts list four sports: Kyokushinkai karate, taekwondo, judo and Muay Thai. The available groups depend on the branch and the student's age.|В академии есть киокушинкай карате, тхэквондо, дзюдо и муай-тай. Доступные группы зависят от филиала и возраста участника.|Академияда киокушинкай каратэ, таэквондо, дзюдо және муай-тай бар. Қолжетімді топтар филиал мен қатысушының жасына байланысты.
 Kyokushinkai karate|Киокушинкай карате|Киокушинкай каратэ
-The Uly Dala schedule includes groups from age four and a group for ages thirteen and older.|На Улы Дала есть группы с четырёх лет и группа для участников от тринадцати лет.|Ұлы Далада төрт жастан бастап топтар және он үш жастан асқандарға арналған топ бар.
-The Uly Dala poster lists groups for ages six to sixteen.|На Улы Дала есть группы для детей от шести до шестнадцати лет.|Ұлы Далада алтыдан он алты жасқа дейінгі балаларға арналған топтар бар.
-The Uly Dala poster lists weekday evening classes and a Saturday class for ages seven to sixteen.|На Улы Дала есть вечерние занятия в будни и субботняя группа для детей от семи до шестнадцати лет.|Ұлы Далада жұмыс күндері кешкі сабақтар және жетіден он алты жасқа дейінгілерге сенбілік топ бар.
-The Uly Dala posters show a children's group and a separate group for adults aged eighteen and older.|На Улы Дала есть детская группа и отдельная группа для взрослых от восемнадцати лет.|Ұлы Далада балалар тобы және он сегіз жастан асқан ересектерге арналған бөлек топ бар.
 for the exact days and times.|для точных дней и времени.|нақты күндер мен уақыт үшін.
-Before choosing a class, ask which group has spaces and whether beginners can join it. Also ask what clothes or equipment are needed for the first session. Confirm the trial price before visiting; the supplied posters do not give one.|Перед выбором занятия уточните наличие мест, условия для новичков, нужную одежду и экипировку. Узнайте стоимость первого занятия до посещения.|Сабақты таңдамас бұрын бос орындарды, жаңадан бастаушыларға арналған шарттарды, қажетті киім мен жабдықты нақтылаңыз. Алғашқы сабақтың бағасын барар алдында сұраңыз.`.split("\n").forEach(row=>{const [en,ru,kk]=row.split("|");dictionary.set(en,[en,ru,kk]);});
+  `.split("\n").forEach(row=>{const [en,ru,kk]=row.split("|");dictionary.set(en,[en,ru,kk]);});
+  `Explore the sports, coaches and classes on the pages below.|Ниже можно узнать о видах спорта, тренерах и занятиях.|Төменде спорт түрлері, жаттықтырушылар және сабақтар туралы біле аласыз.
+Judo training at the academy.|Занятия дзюдо в академии.|Академиядағы дзюдо сабақтары.
+Choose a sport and see the|Выберите вид спорта и посмотрите|Спорт түрін таңдап, қараңыз
+for groups, ages and training times.|группы, возраст и время занятий.|топтарды, жасты және сабақ уақытын.
+Kyokushin Karate: striking and controlled movement.|Киокушин карате: удары и контроль движений.|Киокушин каратэ: соққылар және қимылды бақылау.
+Taekwondo: kicks, balance and coordination.|Тхэквондо: удары ногами, равновесие и координация.|Таэквондо: аяқпен соққылар, тепе-теңдік және үйлесімділік.
+Judo: throws and grappling on a mat.|Дзюдо: броски и борьба на татами.|Дзюдо: татамидегі лақтырулар мен күрес.
+Muay Thai: punches, kicks, knees and elbows.|Муай-тай: удары руками, ногами, коленями и локтями.|Муай-тай: қолмен, аяқпен, тіземен және шынтақпен соққылар.
+Your request stays on this device and does not reserve a place.|Заявка остаётся на этом устройстве и не бронирует место.|Өтінім осы құрылғыда қалады және орын брондамайды.
+Schedule published in September 2025; please confirm current times with the academy.|Расписание опубликовано в сентябре 2025 года; уточните актуальное время в академии.|Кесте 2025 жылғы қыркүйекте жарияланған; қазіргі уақытты академиядан нақтылаңыз.
+Uly Dala groups|Группы на Улы Дала|Ұлы Даладағы топтар
+Turan groups|Группы на Туран|Тұрандағы топтар
+Turan branch|Филиал на Туран|Тұрандағы филиал
+Uly Dala|Улы Дала|Ұлы Дала
+Turan|Туран|Тұран
+Choosing an age group|Выбор возрастной группы|Жас тобын таңдау
+Check the age range and day for your group.|Проверьте возраст и дни занятий группы.|Топтың жасы мен сабақ күндерін тексеріңіз.
+Age 13 appears in two karate groups. Ask the academy which is suitable.|Возраст 13 лет указан для двух групп карате. Уточните подходящую группу в академии.|13 жас екі каратэ тобында көрсетілген. Лайықты топты академиядан нақтылаңыз.
+Find branch addresses and entrances on the|Адреса филиалов и входы смотрите на странице|Филиал мекенжайлары мен кіреберістерін мына беттен қараңыз:
+Contact page|Контакты|Байланыс
+Before paying, ask whether a uniform or equipment is included and how many classes the plan covers.|Перед оплатой уточните, входят ли форма и экипировка в стоимость и сколько занятий включает абонемент.|Төлем алдында киім мен жабдықтың бағаға кіретінін және абонементке қанша сабақ кіретінін нақтылаңыз.
+Call|Позвонить|Қоңырау шалу
+Contact details|Контакты|Байланыс деректері
+Call +7 (778) 048-60-00|Позвонить: +7 (778) 048-60-00|Қоңырау шалу: +7 (778) 048-60-00
+or|или|немесе
+write on WhatsApp|написать в WhatsApp|WhatsApp-қа жазу
+Opening hours: Monday–Sunday, 09:00–22:30. Class times are on the|Часы работы: ежедневно, 09:00–22:30. Время занятий смотрите в|Жұмыс уақыты: күн сайын, 09:00–22:30. Сабақ уақытын мына жерден қараңыз:
+Branches and entrances|Филиалы и входы|Филиалдар мен кіреберістер
+55 Uly Dala Avenue, Astana. The academy is on the basement floor. Check the entrance on|Проспект Улы Дала, 55, Астана. Академия находится на цокольном этаже. Проверьте вход на|Ұлы Дала даңғылы, 55, Астана. Академия жертөле қабатында. Кіреберісті мына жерден тексеріңіз:
+; call the academy if the doorway is unclear.|; если вход неясен, позвоните в академию.|; кіреберісті таба алмасаңыз, академияға қоңырау шалыңыз.
+19 Turan Avenue, Astana. Check the|Проспект Туран, 19, Астана. Посмотрите|Тұран даңғылы, 19, Астана. Қараңыз:
+training days on Schedule|дни занятий в расписании|кестедегі сабақ күндерін
+and confirm the entrance before visiting.|и уточните вход перед посещением.|және барар алдында кіреберісті нақтылаңыз.
+Your first visit|Первое посещение|Алғашқы бару
+Ask whether places are available and what to bring or wear.|Уточните наличие мест и что взять или надеть.|Бос орындар бар-жоғын және не әкелу немесе кию керегін нақтылаңыз.
+For a child, check|Для ребёнка проверьте|Бала үшін тексеріңіз:
+the group ages on Schedule|возраст групп в расписании|кестедегі топ жасын
+and ask whether a parent should attend.|и спросите, нужно ли присутствие родителя.|және ата-ананың қатысуы қажет пе деп сұраңыз.
+Confirm the branch and entrance before travelling.|Перед поездкой уточните филиал и вход.|Жолға шығар алдында филиал мен кіреберісті нақтылаңыз.
+Call academy|Позвонить в академию|Академияға қоңырау шалу
+Next: Schedule|Далее: расписание|Келесі: кесте
+Next: Services|Далее: услуги|Келесі: қызметтер
+Next: Contact|Далее: контакты|Келесі: байланыс
+Next: Home|Далее: главная|Келесі: басты бет
+Your registration details are used for this practice request. Nothing is sent.|Для учебной заявки используются данные регистрации. Ничего не отправляется.|Оқу өтінімі үшін тіркелу деректері қолданылады. Ештеңе жіберілмейді.
+Your practice request is ready. Nothing was sent.|Учебная заявка готова. Ничего не отправлено.|Оқу өтінімі дайын. Ештеңе жіберілген жоқ.`.split("\n").forEach(row=>{const [en,ru,kk]=row.split("|");dictionary.set(en,[en,ru,kk]);});
   const fragments = [
     ["Open favourite classes","Открыть избранные занятия","Таңдаулы сабақтарды ашу"],
     ['Kyokushin Karate','Киокушин карате','Киокушин каратэ'],['Taekwondo','Тхэквондо','Таэквондо'],['Muay Thai','Муай-тай','Муай-тай'],['Judo','Дзюдо','Дзюдо'],

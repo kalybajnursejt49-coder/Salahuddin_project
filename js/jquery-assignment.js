@@ -3,17 +3,14 @@ $(function () {
   'use strict';
 
   const $form = $('#trial-form');
-  const $service = $('#enrollment-section');
   const $schedule = $('#uly-dala');
 
   // .val(), .on() and .each() replace value reads, addEventListener and forEach.
   // The filter is shorter; building the controls still takes about the same space.
   if ($schedule.length) {
-    const $anchor = $service.length ? $service : $schedule;
+    const $anchor = $schedule;
     const $finder = $('<section>').addClass('col-12 bg-white border rounded-3 shadow-sm p-4');
     $finder.append($('<h2>').text('Find a suitable group'));
-    $finder.append($('<p>').text('Published September 2025 times. Confirm current availability with the academy.'));
-    $finder.append($('<p>').text('Step 1 of 3: choose a group. Sign up opens the request form; favourites only keep a class for later.'));
     const $personal = $('<button>').attr({type:'button',id:'match-my-profile'}).addClass('btn btn-dark mb-2').text('Show groups that suit me').appendTo($finder);
     const $personalStatus = $('<p>').attr('aria-live','polite').appendTo($finder);
     let personalActive = false;
@@ -43,7 +40,6 @@ $(function () {
     const $reset = $('<button>').attr('type','button').addClass('btn btn-outline-secondary').text('Reset filters');
     $('<div>').addClass('col-12 col-sm-6 col-lg-3 d-flex align-items-end').append($reset).appendTo($controls);
     const $count = $('<p>').addClass('form-message').attr('aria-live','polite').appendTo($finder);
-    const $list = $service.length ? $('<div>').addClass('row g-3').appendTo($finder) : $();
     $anchor.parent().prepend($finder);
     const $dayOverview = $schedule.length
       ? $('<section>').addClass('col-12 bg-white border rounded-3 shadow-sm p-4 is-hidden').attr('aria-live', 'polite').insertAfter($finder)
@@ -90,23 +86,6 @@ $(function () {
             $dayOverview.append($dayList);
           }
         }
-      }
-      if ($service.length) {
-        $list.empty();
-        $.each(found, function (_, group) {
-          const $card = $('<article>').attr('data-group-id', group.id).addClass('col-12 col-md-6 col-lg-4');
-          const $body = $('<div>').addClass('card h-100').appendTo($card);
-          const $inner = $('<div>').addClass('card-body').appendTo($body);
-          const days = group.days.map(day => dayNames[day]).join(' / ');
-          const maximumAge = group.max === 100 ? 'adult' : group.max;
-          $('<h3>').addClass('h5 card-title').text(sportNames[group.sport]).appendTo($inner);
-          $('<p>').addClass('card-text').text(days + ' · ' + group.time).appendTo($inner);
-          $('<p>').addClass('card-text small text-muted').text(branchNames[group.branch] + ' · ages ' + group.min + '–' + maximumAge).appendTo($inner);
-          $('<button>').attr('type','button').addClass('btn btn-outline-dark choose-group').text('Select this group').appendTo($inner);
-          saveClassButton(group,'ms-2').appendTo($inner);
-          $list.append($card);
-        });
-        if (!found.length) $list.append($('<p>').addClass('col-12 form-note').html('No matching groups. Change the filters or <a href="contact.html#contacts">contact the academy</a>.'));
       }
       if ($schedule.length) {
         $.each(branchNames, function (branch) {
@@ -160,27 +139,6 @@ $(function () {
     });
     window.addEventListener('salahuddin:saved-groups-change',renderGroups);
     // Delegation is needed because renderGroups creates the buttons after this handler is bound.
-    $list.on('click', '.choose-group', function () {
-      const groupId = Number($(this).closest('article').attr('data-group-id'));
-      const group = groups.find(item => item.id === groupId);
-      if (!group) return;
-
-      $form.find('[name="sport_direction"][value="' + group.sport + '"]').prop('checked', true).trigger('change');
-      $form.find('#branch-location').val(group.branch).trigger('change');
-
-      const $choice = $form.find('#chosen-group');
-      const available = $choice.find('option[value="' + group.id + '"]').length > 0;
-      if (available) {
-        $choice.val(String(group.id)).trigger('change');
-      } else {
-        $form.find('#chosen-group-error').text('This group does not match the age in Registration. Update Registration to choose it.');
-      }
-      // Scrolling to the relevant form field makes the chosen card useful immediately.
-      $('html, body').animate({scrollTop: Math.max(0, $form.offset().top - 20)}, 300, function () {
-        if (available) $choice.trigger('focus');
-        else $form.find('#chosen-group').trigger('focus');
-      });
-    });
     renderGroups();
   }
 
@@ -214,7 +172,7 @@ $(function () {
   // addEventListener and classList in the old form. Validation is similarly sized.
   if ($form.length) {
     const $result = $form.find('.form-message').first();
-    $form.find('.form-note').first().text('Your details come from Registration. This practice request is not sent to the academy. Call to confirm your visit.');
+    $form.find('.form-note').first().text('Your registration details are used for this practice request. Nothing is sent.');
     const $profileBox = $('<div>').addClass('border rounded-3 p-3 mb-3').prependTo($form);
     const $profileStatus = $('<p>').attr('aria-live','polite').appendTo($profileBox);
     const $editProfile = $('<button>').attr('type','button').addClass('btn btn-outline-dark').text('Registration / edit details').appendTo($profileBox);
@@ -231,7 +189,6 @@ $(function () {
       }
     }
     renderProfile();
-    $('<p>').addClass('form-note').text('Step 2 of 3: check your group and registration details, then check the request.').insertBefore($profileBox);
     $form.find('[id^="submit-"]').prop('type','submit');
     $form.prop('noValidate', true);
     let $branch = $form.find('#branch-location');
@@ -374,7 +331,7 @@ $(function () {
         return;
       }
       $result.addClass('is-success').text('Demo request for ' + name + ': ' + groupLabel(group) + ' · ' + dateText + '. No data was sent or booking created.').fadeIn(200);
-      $result.append($('<p>').addClass('mt-2').text('Step 3 of 3: your practice request is ready. Nothing was sent. Contact the academy to confirm a real visit.'));
+      $result.append($('<p>').addClass('mt-2').text('Your practice request is ready. Nothing was sent.'));
       $result.append($('<a>').attr('href','contact.html#contacts').addClass('btn btn-dark mt-2').text('Contact the academy'));
       $result.attr('tabindex','-1').trigger('focus');
     });

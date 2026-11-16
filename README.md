@@ -12,6 +12,11 @@ Registration, favourites and reviews stay in this browser. The request form does
 
 Pricing displays indicative amounts and a budget calculator. These amounts are not a confirmed academy price list; no payment is taken here.
 
+## Content ownership and endterm fixes
+
+Contact owns addresses, entrances, email, opening hours and first-visit preparation. Schedule owns group ages, days, times and the single timetable-date notice. Pricing owns indicative prices and questions about what they include. Services describes the sports and holds the practice request; Coaches holds coach profiles. Other pages link to the owner page. The unchanged footer remains a site-wide contact summary.
+
+HTML edits remove repeated visitor instructions, make Pricing and Contact easier to scan, and place branch information where visitors expect it. CSS changes enlarge main text and action labels for readability; the footer styles were not changed. The visible Call action and one final next-step link support visitors who need a clear route through the site.
 ## Code and assets
 
 - js/main.js: shared group data, local Registration, favourites, guides and budget calculator

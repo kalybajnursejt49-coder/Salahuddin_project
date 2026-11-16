@@ -20,7 +20,7 @@ const groups = [
 ];
 
 const sportNames = {karate:'Kyokushin Karate',taekwondo:'Taekwondo',judo:'Judo','muay-thai':'Muay Thai'};
-const branchNames = {'uly-dala-55':'Uly Dala 55','turan-19':'Turan 19'};
+const branchNames = {'uly-dala-55':'Uly Dala branch','turan-19':'Turan branch'};
 const dayNames = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
 
 function element(tag, classes, text) {
@@ -77,36 +77,12 @@ function validPhone(value) {
 
 const home = document.querySelector('#about-club');
 if (home) {
-  const questions = [
-    {
-      question:'Where do classes take place?',
-      answer:'The published groups meet at Uly Dala 55 or Turan 19. Check the branch listed for your group before visiting.'
-    },
-    {
-      question:'Does the registration form book a place?',
-      answer:'No. The form is a front-end demonstration. It does not send your details or reserve a place.'
-    },
-    {
-      question:'Is the timetable current?',
-      answer:'The group times come from academy posts published in September 2025. They may have changed, so confirm the current timetable with the academy.'
-    }
-  ];
-  const faq = element('section','content-panel col-12 bg-white border rounded-3 shadow-sm p-4');
-  faq.append(element('h2','', 'Questions before your first class'));
-  for (const item of questions) {
-    const details = element('details','border rounded-3 p-3 mb-2');
-    details.append(element('summary','fw-semibold',item.question));
-    details.append(element('p','mb-0 mt-2',item.answer));
-    faq.append(details);
-  }
-  home.parentElement.append(faq);
   const start = guidePanel('Start here',[
     '1. Choose a group on Schedule. Favourites are optional: they keep classes for later.',
     '2. Select Sign up for this class, complete Registration and check your request.',
     '3. Review the result, then contact the academy to confirm a real visit.'
   ]);
   start.querySelector('ol').classList.add('list-unstyled');
-  start.append(visitorLink('Choose a group','schedule.html'));
   home.parentElement.prepend(start);
 }
 
@@ -139,6 +115,7 @@ savedGroupIds = Array.isArray(savedGroupIds)
 
 const pageHeader = document.querySelector('header#top');
 if (pageHeader) {
+  if (!document.querySelector('#contacts')) pageHeader.append(visitorLink('Call academy','tel:+77780486000'));
   function iconButton(label, drawing) {
     const button = element('button','btn btn-outline-light rounded-3 p-2 d-inline-flex align-items-center justify-content-center position-relative');
     button.type = 'button';
@@ -411,17 +388,9 @@ if (servicesPanel) {
   for (const [sport, description] of Object.entries(descriptions)) {
     const card = element('div','border rounded-3 p-3 mb-3');
     card.append(element('h3','h5',sportNames[sport]),element('p','mb-2',description));
-    card.append(visitorLink('See class times','schedule.html'));
     intro.append(card);
   }
-  const guide = guidePanel('How to join a class',[
-    'Open Schedule to find a class for your age and a convenient time.',
-    'Choose “Sign up for this class”. Your choice will appear in the form here.',
-    'Complete Registration once, then check your selected class. For a child, ask a parent or guardian to help.',
-    'This practice form does not send a booking. Call the academy to confirm your visit.'
-  ]);
-  guide.append(visitorLink('Find a class','schedule.html'),visitorLink('Call the academy','tel:+77780486000'));
-  servicesPanel.parentElement.prepend(guide);
+
 }
 const pricePanel = document.querySelector('#prices');
 if (pricePanel) {
@@ -431,23 +400,24 @@ if (pricePanel) {
   function updateBudget() {
     const people = Number(count.value);
     total.textContent = Number.isInteger(people) && people >= 1 && people <= 10
-      ? 'Estimated total: ' + (Number(select.value) * people).toLocaleString('ru-RU').replace(/\u00a0/g,' ') + ' ₸. Equipment is not included. No payment is taken here.'
+      ? 'Estimated total: ' + (Number(select.value) * people).toLocaleString('ru-RU').replace(/\u00a0/g,' ') + ' ₸.'
       : 'Enter a whole number from 1 to 10.';
   }
   select.addEventListener('change', updateBudget);
   count.addEventListener('input', updateBudget);
   updateBudget();
 }
-const contactsPanel = document.querySelector('#contacts');
-if (contactsPanel) {
-  const help=guidePanel('Contact us in three easy steps',[
-    'Have the sport, student age, class time and branch ready.',
-    'Call or send a WhatsApp message to ask about available places and the current price.',
-    'Confirm the address, entrance and what to bring before travelling.'
-  ]);
-  help.append(visitorLink('Call +7 778 048 60 00','tel:+77780486000'),visitorLink('Ask on WhatsApp','https://wa.me/77780486000'),visitorLink('Open Uly Dala on 2GIS','https://2gis.kz/astana/firm/70000001078856416'));
-  help.append(element('p','mt-2','Uly Dala 55: basement floor. Turan Avenue 19, Astana: confirm the current group and entrance before visiting.'));
-  const checklist=element('details','border rounded-3 p-3');checklist.append(element('summary','fw-semibold','What should I ask before my first visit?'));
-  checklist.append(element('p','mt-2 mb-0','Ask whether the group accepts beginners of your age, whether a parent should attend, what clothing or equipment is required, and how payment and missed classes work.'));
-  help.append(checklist);contactsPanel.parentElement.prepend(help);
+const nextSteps = {
+  'index.html':['Next: Schedule','schedule.html'],
+  'schedule.html':['Next: Services','services.html'],
+  'services.html':['Next: Contact','contact.html'],
+  'coaches.html':['Next: Schedule','schedule.html'],
+  'contact.html':['Next: Home','index.html']
+};
+const nextStep = nextSteps[location.pathname.split('/').pop() || 'index.html'];
+if (nextStep) {
+  const main = document.querySelector('main');
+  const wrap = element('p','mt-4 text-end');
+  wrap.append(visitorLink(nextStep[0],nextStep[1]));
+  main.append(wrap);
 }
