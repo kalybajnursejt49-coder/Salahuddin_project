@@ -398,6 +398,7 @@ if (pricePanel) {
   const count = pricePanel.querySelector('#budget-people');
   const total = pricePanel.querySelector('#budget-total');
   function updateBudget() {
+    if (count.validity.rangeOverflow) count.value = count.max;
     const people = Number(count.value);
     total.textContent = Number.isInteger(people) && people >= 1 && people <= 10
       ? 'Estimated total: ' + (Number(select.value) * people).toLocaleString('ru-RU').replace(/\u00a0/g,' ') + ' ₸.'
